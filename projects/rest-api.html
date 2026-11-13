@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 4: A JSON REST API with Tests — Learn PHP</title>
+<meta name="description" content="A versioned JSON API with routing, validation, pagination, auth tokens and a test suite that actually runs.">
+<meta name="theme-color" content="#0B0F14">
+<link rel="canonical" href="https://static.teamily.ai/sites/3b1261c2-d849-4ad1-8822-626109251b81/webpages/learn-php_v8/projects/rest-api.html">
+<meta property="og:url" content="https://static.teamily.ai/sites/3b1261c2-d849-4ad1-8822-626109251b81/webpages/learn-php_v8/projects/rest-api.html">
+<meta property="og:image" content="https://static.teamily.ai/sites/3b1261c2-d849-4ad1-8822-626109251b81/webpages/learn-php_v8/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Learn PHP — 96 lessons from first script to production backend">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://static.teamily.ai/sites/3b1261c2-d849-4ad1-8822-626109251b81/webpages/learn-php_v8/assets/og-image.png">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn PHP">
+<meta property="og:title" content="Project 4: A JSON REST API with Tests">
+<meta property="og:description" content="A versioned JSON API with routing, validation, pagination, auth tokens and a test suite that actually runs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/account.css">
+<style>
+  .proj-head{padding:48px 0 34px;border-bottom:1px solid var(--line-soft)}
+  .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-family:var(--mono);
+    font-size:11.5px;color:var(--muted-2);margin-bottom:18px}
+  .crumbs a{color:var(--muted)}
+  .crumbs a:hover{color:var(--php)}
+  .crumbs .sep{color:var(--line)}
+  .proj-head h1{font-size:clamp(1.7rem,3.6vw,2.4rem);margin:12px 0 14px;letter-spacing:-.03em}
+  .proj-head .lede{color:var(--muted);font-size:1.04rem;max-width:70ch}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:20px;
+    font-family:var(--mono);font-size:11.5px;color:var(--muted-2)}
+  .meta-row .dot{width:3px;height:3px;border-radius:50%;background:var(--line)}
+  .proj-body{padding:40px 0 20px;max-width:80ch}
+  .proj-body h2{font-size:1.2rem;margin:36px 0 14px}
+  .proj-body h2:first-child{margin-top:0}
+  .proj-body p{color:#C6D3E2;margin-bottom:16px}
+  .proj-body ul{display:grid;gap:10px;margin-bottom:20px}
+  .proj-body li{position:relative;padding-left:24px;color:#C6D3E2;font-size:.94rem;line-height:1.6}
+  .proj-body li::before{content:"\2192";position:absolute;left:0;color:var(--mint);
+    font-family:var(--mono);font-size:.9rem}
+  .proj-body li code{font-size:.86em}
+  .why-box{border:1px solid rgba(139,147,217,.3);background:rgba(139,147,217,.06);
+    border-radius:12px;padding:20px 22px;margin:26px 0}
+  .why-box .k{font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--php);margin-bottom:8px}
+  .why-box p{margin:0;color:#C6D3E2;font-size:.94rem}
+  pre{font-family:var(--mono);margin:0 0 20px;overflow-x:auto;background:#0D131A;
+    border:1px solid var(--line-soft);border-radius:10px;padding:18px 20px;
+    font-size:12.4px;line-height:1.75;color:#D6E2F0}
+  .checklist{border:1px solid var(--line);background:var(--ink-2);border-radius:12px;
+    padding:22px 24px;margin:30px 0}
+  .checklist h2{font-size:1rem;margin:0 0 14px}
+  .checklist li::before{content:"\2610";color:var(--php)}
+  .proj-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:44px 0 0;
+    padding-top:30px;border-top:1px solid var(--line-soft)}
+  .proj-link{display:block;border:1px solid var(--line-soft);border-radius:12px;
+    padding:15px 18px;background:var(--ink-2);transition:border-color .16s}
+  .proj-link:hover{border-color:var(--php)}
+  .proj-link span{display:block;font-family:var(--mono);font-size:10px;color:var(--muted-2);
+    letter-spacing:.1em;margin-bottom:5px}
+  .proj-link b{font-size:.88rem;font-weight:500}
+  @media(max-width:760px){.proj-nav{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="../assets/donation.css">
+<!-- Privacy-friendly analytics (Plausible). TODO: replace data-domain with your real domain. -->
+<script defer data-domain="learnphp.example" src="https://plausible.io/js/script.js"></script>
+<script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-mark">&lt;?</span>
+      Learn<span style="color:var(--php)">PHP</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html#path">Curriculum</a>
+      <a href="../index.html#curriculum">All lessons</a>
+      <a href="../index.html#support">Support</a>
+      <a href="../index.html#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta" data-lp-nav></div>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </div>
+  <div class="wrap">
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="../index.html#path">Curriculum</a>
+      <a href="../index.html#curriculum">All lessons</a>
+      <a href="../index.html#support">Support</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="../index.html#support" class="btn btn-primary btn-block">Support this site</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="proj-head">
+    <div class="crumbs">
+      <a href="../index.html">Home</a><span class="sep">/</span>
+      <a href="../index.html#curriculum">Projects</a><span class="sep">/</span>
+      <span>Project 4</span>
+    </div>
+    <p class="eyebrow">Guided project 4 of 4</p>
+    <h1>A JSON REST API with Tests</h1>
+    <p class="lede">A versioned JSON API with routing, validation, pagination, auth tokens and a test suite that actually runs.</p>
+    <div class="meta-row">
+      <span class="badge badge-free">Free</span>
+      <span class="dot"></span><span>Levels 6–8</span>
+      <span class="dot"></span><span>14–20 hours</span>
+      <span class="dot"></span><span>Advanced</span>
+    </div>
+  </div>
+
+  <article class="proj-body">
+    <div class="why-box">
+      <div class="k">Why this project</div>
+      <p>This is the project that proves you can build something another team can consume. It is also the one that teaches you why tests are not optional.</p>
+    </div>
+
+    <h2>The brief</h2>
+      <p>Build a JSON API for a resource of your choice (tasks, notes, products). It must support list, read, create, update and delete, with consistent response envelopes and correct HTTP status codes.</p>
+      <p>Add token authentication, request validation with structured error responses, pagination and filtering. No framework — a small router and a handful of classes.</p>
+      <p>Write a test suite that exercises every endpoint against a test database. The suite must run with a single command and must fail loudly when you break something.</p>
+
+    <h2>Requirements</h2>
+    <ul>
+        <li>Front controller with a small router — no <code>.htaccess</code> magic required</li>
+        <li>Consistent envelope: <code>{data, meta}</code> on success, <code>{error: {code, message, fields}}</code> on failure</li>
+        <li>Correct status codes: 200, 201, 204, 400, 401, 403, 404, 422, 429</li>
+        <li>Bearer token auth, tokens stored hashed</li>
+        <li>Validation with per-field error messages in a 422 response</li>
+        <li>Pagination with <code>page</code>, <code>per_page</code> and a <code>meta.total</code> count</li>
+        <li>All queries prepared; no ORM required</li>
+        <li>A test suite covering every endpoint, including the failure paths</li>
+        <li><code>Content-Type: application/json</code> on every response, including errors</li>
+    </ul>
+
+    <h2>Starter code</h2>
+    <p>A skeleton to build from — not a solution. Read it, then extend it.</p>
+<pre><code>&lt;?php
+declare(strict_types=1);
+
+// ---- A tiny router: method + path pattern -&gt; handler ----
+final class Router
+{
+    private array $routes = [];
+
+    public function add(string $method, string $pattern, callable $handler): void
+    {
+        $this-&gt;routes[] = [$method, $pattern, $handler];
+    }
+
+    public function dispatch(string $method, string $path): void
+    {
+        foreach ($this-&gt;routes as [$m, $pattern, $handler]) {
+            $regex = &#x27;#^&#x27; . preg_replace(&#x27;#\{(\w+)\}#&#x27;, &#x27;(?P&lt;$1&gt;[^/]+)&#x27;, $pattern) . &#x27;$#&#x27;;
+            if ($m === $method &amp;&amp; preg_match($regex, $path, $matches)) {
+                $params = array_filter($matches, &#x27;is_string&#x27;, ARRAY_FILTER_USE_KEY);
+                $handler($params);
+                return;
+            }
+        }
+        self::json([&#x27;error&#x27; =&gt; [&#x27;code&#x27; =&gt; &#x27;not_found&#x27;, &#x27;message&#x27; =&gt; &#x27;No such endpoint&#x27;]], 404);
+    }
+
+    public static function json(array $payload, int $status = 200): void
+    {
+        http_response_code($status);
+        header(&#x27;Content-Type: application/json; charset=utf-8&#x27;);
+        echo json_encode($payload, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+}
+
+// ---- Validation with per-field errors ----
+function validate(array $input, array $rules): array
+{
+    $errors = [];
+    foreach ($rules as $field =&gt; $rule) {
+        $value = trim((string)($input[$field] ?? &#x27;&#x27;));
+        if (str_contains($rule, &#x27;required&#x27;) &amp;&amp; $value === &#x27;&#x27;) {
+            $errors[$field] = &#x27;This field is required.&#x27;;
+        } elseif ($value !== &#x27;&#x27; &amp;&amp; str_contains($rule, &#x27;email&#x27;)
+                  &amp;&amp; !filter_var($value, FILTER_VALIDATE_EMAIL)) {
+            $errors[$field] = &#x27;Must be a valid email address.&#x27;;
+        } elseif ($value !== &#x27;&#x27; &amp;&amp; preg_match(&#x27;/max:(\d+)/&#x27;, $rule, $m)
+                  &amp;&amp; mb_strlen($value) &gt; (int)$m[1]) {
+            $errors[$field] = &#x27;Must be at most &#x27; . $m[1] . &#x27; characters.&#x27;;
+        }
+    }
+    return $errors;
+}
+
+$router = new Router();
+$router-&gt;add(&#x27;GET&#x27;, &#x27;/api/v1/tasks&#x27;, function () use ($pdo) {
+    $stmt = $pdo-&gt;query(&#x27;SELECT id, title, done FROM tasks ORDER BY id DESC&#x27;);
+    Router::json([&#x27;data&#x27; =&gt; $stmt-&gt;fetchAll(), &#x27;meta&#x27; =&gt; [&#x27;total&#x27; =&gt; $stmt-&gt;rowCount()]]);
+});
+
+$router-&gt;add(&#x27;POST&#x27;, &#x27;/api/v1/tasks&#x27;, function () use ($pdo) {
+    $input  = json_decode(file_get_contents(&#x27;php://input&#x27;), true) ?: [];
+    $errors = validate($input, [&#x27;title&#x27; =&gt; &#x27;required|max:120&#x27;]);
+    if ($errors) {
+        Router::json([&#x27;error&#x27; =&gt; [&#x27;code&#x27; =&gt; &#x27;validation_failed&#x27;,
+                                  &#x27;message&#x27; =&gt; &#x27;The given data was invalid.&#x27;,
+                                  &#x27;fields&#x27;  =&gt; $errors]], 422);
+    }
+    $stmt = $pdo-&gt;prepare(&#x27;INSERT INTO tasks (title, done) VALUES (?, 0)&#x27;);
+    $stmt-&gt;execute([$input[&#x27;title&#x27;]]);
+    Router::json([&#x27;data&#x27; =&gt; [&#x27;id&#x27; =&gt; (int)$pdo-&gt;lastInsertId(),
+                             &#x27;title&#x27; =&gt; $input[&#x27;title&#x27;], &#x27;done&#x27; =&gt; false]], 201);
+});
+
+$router-&gt;dispatch($_SERVER[&#x27;REQUEST_METHOD&#x27;], parse_url($_SERVER[&#x27;REQUEST_URI&#x27;], PHP_URL_PATH));</code></pre>
+
+    <h2>Stretch goals</h2>
+    <ul>
+        <li>Add ETag support and conditional GET</li>
+        <li>Add rate limiting with a <code>429</code> and <code>Retry-After</code> header</li>
+        <li>Add OpenAPI documentation generated from the route table</li>
+        <li>Add a CI config that runs the suite on every push</li>
+    </ul>
+
+    <div class="checklist">
+      <h2>Definition of done</h2>
+      <ul>
+        <li><code>GET /api/v1/tasks</code> returns 200 with a <code>data</code> array and <code>meta.total</code></li>
+        <li><code>POST</code> with an empty title returns 422 with a <code>fields.title</code> message</li>
+        <li><code>POST</code> with valid data returns 201 and a <code>Location</code>-style body</li>
+        <li><code>GET /api/v1/nope</code> returns 404 with the error envelope, not an HTML page</li>
+        <li>A request with no bearer token returns 401</li>
+        <li>The test suite runs green, and fails when you deliberately break one query</li>
+      </ul>
+    </div>
+
+    <nav class="proj-nav" aria-label="Other projects">
+        <a class="proj-link" href="contact-form.html"><span>01</span><b>A Validated Contact Form</b></a>
+        <a class="proj-link" href="blog-crud.html"><span>02</span><b>A Blog with Full CRUD</b></a>
+        <a class="proj-link" href="auth-system.html"><span>03</span><b>A Complete Authentication System</b></a>
+    </nav>
+  </article>
+</div>
+</main>
+
+<!-- ============ SUPPORT / DONATION ============ -->
+<section class="dn-section" aria-labelledby="dn-h">
+  <div class="wrap" style="padding:0 24px 10px">
+    <div data-donation="block" data-donation-prefix="../"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom">
+      <span>&copy; 2026 Learn PHP. All rights reserved.</span>
+      <span data-donation="compact" data-donation-prefix="../"></span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/app.js"></script>
+<script>
+(function () {
+  var b = document.getElementById('burger'), m = document.getElementById('mobileMenu');
+  if (b && m) b.addEventListener('click', function () {
+    var o = m.classList.toggle('open');
+    b.setAttribute('aria-expanded', o ? 'true' : 'false');
+    b.textContent = o ? '\u2715' : '\u2630';
+  });
+})();
+</script>
+<script src="../assets/donation-config.js"></script>
+<script src="../assets/donation.js"></script>
+</body>
+</html>

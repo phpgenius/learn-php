@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 3: A Complete Authentication System — Learn PHP</title>
+<meta name="description" content="Registration, login, remember-me, password reset and session hardening — built the way it has to be built.">
+<meta name="theme-color" content="#0B0F14">
+<link rel="canonical" href="https://static.teamily.ai/sites/3b1261c2-d849-4ad1-8822-626109251b81/webpages/learn-php_v8/projects/auth-system.html">
+<meta property="og:url" content="https://static.teamily.ai/sites/3b1261c2-d849-4ad1-8822-626109251b81/webpages/learn-php_v8/projects/auth-system.html">
+<meta property="og:image" content="https://static.teamily.ai/sites/3b1261c2-d849-4ad1-8822-626109251b81/webpages/learn-php_v8/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Learn PHP — 96 lessons from first script to production backend">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://static.teamily.ai/sites/3b1261c2-d849-4ad1-8822-626109251b81/webpages/learn-php_v8/assets/og-image.png">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn PHP">
+<meta property="og:title" content="Project 3: A Complete Authentication System">
+<meta property="og:description" content="Registration, login, remember-me, password reset and session hardening — built the way it has to be built.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/account.css">
+<style>
+  .proj-head{padding:48px 0 34px;border-bottom:1px solid var(--line-soft)}
+  .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-family:var(--mono);
+    font-size:11.5px;color:var(--muted-2);margin-bottom:18px}
+  .crumbs a{color:var(--muted)}
+  .crumbs a:hover{color:var(--php)}
+  .crumbs .sep{color:var(--line)}
+  .proj-head h1{font-size:clamp(1.7rem,3.6vw,2.4rem);margin:12px 0 14px;letter-spacing:-.03em}
+  .proj-head .lede{color:var(--muted);font-size:1.04rem;max-width:70ch}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:20px;
+    font-family:var(--mono);font-size:11.5px;color:var(--muted-2)}
+  .meta-row .dot{width:3px;height:3px;border-radius:50%;background:var(--line)}
+  .proj-body{padding:40px 0 20px;max-width:80ch}
+  .proj-body h2{font-size:1.2rem;margin:36px 0 14px}
+  .proj-body h2:first-child{margin-top:0}
+  .proj-body p{color:#C6D3E2;margin-bottom:16px}
+  .proj-body ul{display:grid;gap:10px;margin-bottom:20px}
+  .proj-body li{position:relative;padding-left:24px;color:#C6D3E2;font-size:.94rem;line-height:1.6}
+  .proj-body li::before{content:"\2192";position:absolute;left:0;color:var(--mint);
+    font-family:var(--mono);font-size:.9rem}
+  .proj-body li code{font-size:.86em}
+  .why-box{border:1px solid rgba(139,147,217,.3);background:rgba(139,147,217,.06);
+    border-radius:12px;padding:20px 22px;margin:26px 0}
+  .why-box .k{font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--php);margin-bottom:8px}
+  .why-box p{margin:0;color:#C6D3E2;font-size:.94rem}
+  pre{font-family:var(--mono);margin:0 0 20px;overflow-x:auto;background:#0D131A;
+    border:1px solid var(--line-soft);border-radius:10px;padding:18px 20px;
+    font-size:12.4px;line-height:1.75;color:#D6E2F0}
+  .checklist{border:1px solid var(--line);background:var(--ink-2);border-radius:12px;
+    padding:22px 24px;margin:30px 0}
+  .checklist h2{font-size:1rem;margin:0 0 14px}
+  .checklist li::before{content:"\2610";color:var(--php)}
+  .proj-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:44px 0 0;
+    padding-top:30px;border-top:1px solid var(--line-soft)}
+  .proj-link{display:block;border:1px solid var(--line-soft);border-radius:12px;
+    padding:15px 18px;background:var(--ink-2);transition:border-color .16s}
+  .proj-link:hover{border-color:var(--php)}
+  .proj-link span{display:block;font-family:var(--mono);font-size:10px;color:var(--muted-2);
+    letter-spacing:.1em;margin-bottom:5px}
+  .proj-link b{font-size:.88rem;font-weight:500}
+  @media(max-width:760px){.proj-nav{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="../assets/donation.css">
+<!-- Privacy-friendly analytics (Plausible). TODO: replace data-domain with your real domain. -->
+<script defer data-domain="learnphp.example" src="https://plausible.io/js/script.js"></script>
+<script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-mark">&lt;?</span>
+      Learn<span style="color:var(--php)">PHP</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html#path">Curriculum</a>
+      <a href="../index.html#curriculum">All lessons</a>
+      <a href="../index.html#support">Support</a>
+      <a href="../index.html#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta" data-lp-nav></div>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </div>
+  <div class="wrap">
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="../index.html#path">Curriculum</a>
+      <a href="../index.html#curriculum">All lessons</a>
+      <a href="../index.html#support">Support</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="../index.html#support" class="btn btn-primary btn-block">Support this site</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="proj-head">
+    <div class="crumbs">
+      <a href="../index.html">Home</a><span class="sep">/</span>
+      <a href="../index.html#curriculum">Projects</a><span class="sep">/</span>
+      <span>Project 3</span>
+    </div>
+    <p class="eyebrow">Guided project 3 of 4</p>
+    <h1>A Complete Authentication System</h1>
+    <p class="lede">Registration, login, remember-me, password reset and session hardening — built the way it has to be built.</p>
+    <div class="meta-row">
+      <span class="badge badge-free">Free</span>
+      <span class="dot"></span><span>Levels 5–8</span>
+      <span class="dot"></span><span>12–16 hours</span>
+      <span class="dot"></span><span>Advanced</span>
+    </div>
+  </div>
+
+  <article class="proj-body">
+    <div class="why-box">
+      <div class="k">Why this project</div>
+      <p>Authentication is the single most commonly botched feature in PHP applications. Getting it right once, by hand, is worth more than any tutorial.</p>
+    </div>
+
+    <h2>The brief</h2>
+      <p>Build a full authentication system: registration with email verification, login, logout, remember-me cookies, and a password reset flow with expiring tokens.</p>
+      <p>Passwords are hashed with <code>password_hash()</code> and verified with <code>password_verify()</code>. Session IDs are regenerated on login. Every state-changing request carries a CSRF token.</p>
+      <p>The reset flow is the hard part: tokens must be single-use, expiring, and stored hashed — never in plaintext in the database.</p>
+
+    <h2>Requirements</h2>
+    <ul>
+        <li><code>password_hash($pw, PASSWORD_DEFAULT)</code> — never md5, sha1 or a hand-rolled hash</li>
+        <li><code>password_verify()</code> for login, with a constant-time comparison</li>
+        <li><code>session_regenerate_id(true)</code> immediately after a successful login</li>
+        <li>Session cookie flags: <code>HttpOnly</code>, <code>Secure</code>, <code>SameSite=Lax</code></li>
+        <li>CSRF token on every POST form, verified before any state change</li>
+        <li>Reset tokens: 32 random bytes, stored hashed, single-use, 1-hour expiry</li>
+        <li>Login rate limiting per email and per IP</li>
+        <li>Generic error messages — never reveal whether an email exists</li>
+        <li>Remember-me token rotated on every use, stored hashed</li>
+    </ul>
+
+    <h2>Starter code</h2>
+    <p>A skeleton to build from — not a solution. Read it, then extend it.</p>
+<pre><code>&lt;?php
+declare(strict_types=1);
+
+// ---- Registration: hash, never store the password ----
+$hash = password_hash($password, PASSWORD_DEFAULT);
+
+$stmt = $pdo-&gt;prepare(
+    &#x27;INSERT INTO users (email, password_hash, created_at) VALUES (?, ?, NOW())&#x27;
+);
+$stmt-&gt;execute([$email, $hash]);
+
+// ---- Login: verify, then rotate the session id ----
+$stmt = $pdo-&gt;prepare(&#x27;SELECT id, password_hash FROM users WHERE email = ?&#x27;);
+$stmt-&gt;execute([$email]);
+$user = $stmt-&gt;fetch();
+
+// Always run a verify, even when the user does not exist, so the
+// response time does not leak whether the email is registered.
+$dummy = &#x27;$2y$12$usesomesillystringfore7hnbRJHxXVLeakoG8K30oukPsA.ztMG&#x27;;
+$ok = password_verify($password, $user[&#x27;password_hash&#x27;] ?? $dummy);
+
+if ($user &amp;&amp; $ok) {
+    session_regenerate_id(true);   // defeats session fixation
+    $_SESSION[&#x27;uid&#x27;]  = (int)$user[&#x27;id&#x27;];
+    $_SESSION[&#x27;csrf&#x27;] = bin2hex(random_bytes(32));
+    header(&#x27;Location: /dashboard.php&#x27;, true, 303);
+    exit;
+}
+
+// Generic message: never say &quot;no such user&quot; or &quot;wrong password&quot;.
+$error = &#x27;Email or password is incorrect.&#x27;;
+
+// ---- Password reset: store the token HASHED, never the token ----
+$token = bin2hex(random_bytes(32));
+$tokenHash = hash(&#x27;sha256&#x27;, $token);
+
+$pdo-&gt;prepare(
+    &#x27;INSERT INTO password_resets (user_id, token_hash, expires_at)
+     VALUES (?, ?, DATE_ADD(NOW(), INTERVAL 1 HOUR))&#x27;
+)-&gt;execute([$userId, $tokenHash]);
+
+// Only the raw token goes in the email link; the DB holds the hash.
+$link = &#x27;https://example.com/reset.php?token=&#x27; . $token;</code></pre>
+
+    <h2>Stretch goals</h2>
+    <ul>
+        <li>Add TOTP two-factor authentication</li>
+        <li>Add a session list page showing device and last-seen time</li>
+        <li>Add account lockout after 10 failed attempts</li>
+        <li>Add an audit log of every login and password change</li>
+    </ul>
+
+    <div class="checklist">
+      <h2>Definition of done</h2>
+      <ul>
+        <li>Register, then inspect the database — the password column is a bcrypt hash</li>
+        <li>Log in and check the session cookie — <code>HttpOnly</code> and <code>SameSite</code> are set</li>
+        <li>Reuse a reset link — the second attempt is refused</li>
+        <li>Wait past the expiry and use the link — it is refused</li>
+        <li>Log in with a wrong password for a real email and a fake email — identical message and similar timing</li>
+        <li>Submit a form without the CSRF token — it is rejected</li>
+      </ul>
+    </div>
+
+    <nav class="proj-nav" aria-label="Other projects">
+        <a class="proj-link" href="contact-form.html"><span>01</span><b>A Validated Contact Form</b></a>
+        <a class="proj-link" href="blog-crud.html"><span>02</span><b>A Blog with Full CRUD</b></a>
+        <a class="proj-link" href="rest-api.html"><span>04</span><b>A JSON REST API with Tests</b></a>
+    </nav>
+  </article>
+</div>
+</main>
+
+<!-- ============ SUPPORT / DONATION ============ -->
+<section class="dn-section" aria-labelledby="dn-h">
+  <div class="wrap" style="padding:0 24px 10px">
+    <div data-donation="block" data-donation-prefix="../"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom">
+      <span>&copy; 2026 Learn PHP. All rights reserved.</span>
+      <span data-donation="compact" data-donation-prefix="../"></span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/app.js"></script>
+<script>
+(function () {
+  var b = document.getElementById('burger'), m = document.getElementById('mobileMenu');
+  if (b && m) b.addEventListener('click', function () {
+    var o = m.classList.toggle('open');
+    b.setAttribute('aria-expanded', o ? 'true' : 'false');
+    b.textContent = o ? '\u2715' : '\u2630';
+  });
+})();
+</script>
+<script src="../assets/donation-config.js"></script>
+<script src="../assets/donation.js"></script>
+</body>
+</html>

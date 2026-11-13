@@ -19,7 +19,8 @@ Disallow: /tools/
 User-agent: AhrefsBot
 Crawl-delay: 10
 
-User-agent: SemrushBot
-Crawl-delay: 10
 
-Sitemap: https://static.teamily.ai/sites/3b1261c2-d849-4ad1-8822-626109251b81/webpages/learn-php_v8/sitemap.xml
+User-agent: *
+Allow: /
+
+Sitemap: https://phpgenius.github.io/learn-php/sitemap.xml

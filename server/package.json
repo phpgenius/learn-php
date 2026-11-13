@@ -1,0 +1,21 @@
+{
+  "name": "learnphp-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Checkout server for Learn PHP — Stripe Checkout, success/cancel handling, subscription webhook.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "stripe:listen": "stripe listen --forward-to localhost:4242/api/stripe/webhook",
+    "smoke": "node scripts/smoke-test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "stripe": "^16.9.0"
+  }
+}

@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learn PHP — From First Script to Production-Ready Backend</title>
+<meta name="description" content="A structured PHP learning path: 96 free lessons across 8 levels - syntax, forms, arrays, functions, OOP, MySQL and security. Every lesson and project brief is free, no account required.">
+<meta name="author" content="Learn PHP">
+<meta name="theme-color" content="#0B0F14">
+<link rel="canonical" href="https://static.teamily.ai/sites/3b1261c2-d849-4ad1-8822-626109251b81/webpages/learn-php_v8/index.html">
+<meta property="og:url" content="https://static.teamily.ai/sites/3b1261c2-d849-4ad1-8822-626109251b81/webpages/learn-php_v8/index.html">
+<meta property="og:image" content="https://static.teamily.ai/sites/3b1261c2-d849-4ad1-8822-626109251b81/webpages/learn-php_v8/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Learn PHP — 96 lessons from first script to production backend">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://static.teamily.ai/sites/3b1261c2-d849-4ad1-8822-626109251b81/webpages/learn-php_v8/assets/og-image.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Learn PHP">
+<meta property="og:title" content="Learn PHP — From First Script to Production-Ready Backend">
+<meta property="og:description" content="96 free PHP lessons across 8 levels: syntax, forms, arrays, functions, OOP, MySQL and security. No paywall, no account.">
+<meta name="twitter:title" content="Learn PHP — From First Script to Production-Ready Backend">
+<meta name="twitter:description" content="A structured PHP learning path: syntax, forms, arrays, functions, OOP, MySQL and security.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://learnphp.example/#org",
+      "name": "Learn PHP",
+      "url": "https://learnphp.example/",
+      "description": "Structured PHP training for developers moving from first script to production backend."
+    },
+    {
+      "@type": "Course",
+      "name": "Learn PHP: Zero to Production Backend",
+      "description": "An eight-level PHP curriculum covering syntax and data types, control flow, arrays and strings, functions, forms and state, object-oriented PHP, MySQL with PDO, and application security.",
+      "provider": { "@id": "https://learnphp.example/#org" },
+      "educationalLevel": "Beginner to Intermediate",
+      "inLanguage": "en",
+      "teaches": [
+        "PHP syntax, variables and data types",
+        "Control flow, loops and match expressions",
+        "Arrays, string functions and sorting",
+        "User-defined and callback functions",
+        "Form handling, validation and superglobals",
+        "Sessions, cookies and file uploads",
+        "Object-oriented PHP: classes, interfaces, traits, namespaces",
+        "MySQL with PDO prepared statements",
+        "Application security: XSS, CSRF, password hashing"
+      ],
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "courseWorkload": "PT6H"
+      },
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "name": "Free",
+        "price": "0",
+        "priceCurrency": "USD",
+        "category": "Free",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need to know HTML and CSS first?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, at a basic level. PHP runs on the server and returns HTML to the browser, so you should be comfortable with HTML elements, forms and a little CSS before starting Level 1. JavaScript helps from Level 5 onward, when you start handling form submissions and AJAX." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which PHP version does the course use?",
+          "acceptedAnswer": { "@type": "Answer", "text": "All code targets PHP 8.1 or newer and uses strict types. That means union types, named arguments, match expressions, the nullsafe operator and constructor property promotion are available throughout, and nothing in the course relies on removed PHP 5 or 7 behaviour." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the free tier really free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Levels 1 through 3, all code samples and the weekly newsletter are free with no account required. A free account adds progress tracking and the exercise grader. Pro unlocks Levels 4 through 8, the project builds and the certificate." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I cancel a paid plan at any time?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, from your account page in two clicks. Cancelling stops the next renewal and you keep access until the end of the period you already paid for. There is also a 30-day refund window on first purchases." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I get a certificate?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Pro and Team members get a completion certificate after passing the final assessment, which covers all eight levels and includes a practical build. The certificate carries a verification URL that employers can check." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much time should I budget each week?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most learners finish in ten to twelve weeks at four to six hours per week. The path is sequential, so you can move faster through Levels 1 and 2 if you already write code in another language." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --ink:#0B0F14;
+    --ink-2:#111821;
+    --panel:#151D27;
+    --panel-2:#1B2531;
+    --line:#26313F;
+    --line-soft:#1E2833;
+    --text:#E6EDF5;
+    --muted:#93A3B8;
+    --muted-2:#6E7F94;
+    --php:#8B93D9;
+    --php-deep:#5C64A8;
+    --mint:#6FE3B4;
+    --amber:#F2B75C;
+    --radius:14px;
+    --maxw:1180px;
+    --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    --sans:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--ink);color:var(--text);
+    font-family:var(--sans);font-size:16.5px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4{margin:0;line-height:1.15;letter-spacing:-.02em;font-weight:600}
+  p{margin:0}
+  ul{margin:0;padding:0;list-style:none}
+  button{font-family:inherit;cursor:pointer}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .eyebrow{
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--php);font-weight:500;
+  }
+  .section{padding:96px 0;position:relative}
+  .section-head{max-width:720px;margin-bottom:52px}
+  .section-head h2{font-size:clamp(1.75rem,3.4vw,2.6rem);margin:14px 0 16px}
+  .section-head p{color:var(--muted);font-size:1.02rem}
+  .rule{height:1px;background:var(--line-soft);border:0;margin:0}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    padding:13px 24px;border-radius:10px;border:1px solid transparent;
+    font-weight:600;font-size:.95rem;letter-spacing:-.01em;
+    transition:transform .16s ease,background .16s ease,border-color .16s ease,color .16s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{background:var(--mint);color:#06231A}
+  .btn-primary:hover{background:#8AEFC6}
+  .btn-ghost{background:transparent;border-color:var(--line);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--php);color:#fff}
+  .btn-php{background:var(--php);color:#0B0F14}
+  .btn-php:hover{background:#A0A7E6}
+  .btn-sm{padding:9px 16px;font-size:.86rem;border-radius:8px}
+  .btn-block{width:100%}
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:sticky;top:0;z-index:60;
+    background:rgba(11,15,20,.86);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav-inner{display:flex;align-items:center;gap:28px;height:66px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.06rem;letter-spacing:-.03em}
+  .logo-mark{
+    width:30px;height:30px;border-radius:8px;display:grid;place-items:center;
+    background:linear-gradient(150deg,var(--php),var(--php-deep));
+    font-family:var(--mono);font-size:12px;font-weight:700;color:#0B0F14;
+  }
+  .nav-links{display:flex;gap:26px;margin-left:auto;font-size:.9rem;color:var(--muted)}
+  .nav-links a{transition:color .15s}
+  .nav-links a:hover{color:var(--text)}
+  .nav-cta{display:flex;gap:10px;align-items:center}
+  .burger{
+    display:none;margin-left:auto;background:none;border:1px solid var(--line);
+    border-radius:8px;width:40px;height:38px;color:var(--text);font-size:1.1rem;
+  }
+  .mobile-menu{display:none;border-top:1px solid var(--line-soft);padding:14px 0 20px}
+  .mobile-menu.open{display:block}
+  .mobile-menu a{display:block;padding:11px 0;color:var(--muted);font-size:.95rem;border-bottom:1px solid var(--line-soft)}
+  .mobile-menu .btn{margin-top:16px}
+
+  /* ---------- hero ---------- */
+  .hero{padding:78px 0 84px;position:relative;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:-30% 40% 40% -20%;
+    background:radial-gradient(circle at 30% 30%,rgba(139,147,217,.16),transparent 62%);
+    pointer-events:none;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative}
+  .hero h1{font-size:clamp(2.15rem,4.6vw,3.5rem);margin:18px 0 20px;letter-spacing:-.035em}
+  .hero h1 em{font-style:normal;color:var(--php)}
+  .hero-sub{color:var(--muted);font-size:1.08rem;max-width:520px}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 22px}
+  .hero-meta{display:flex;gap:22px;flex-wrap:wrap;font-size:.84rem;color:var(--muted-2);font-family:var(--mono)}
+  .hero-meta span{display:flex;align-items:center;gap:7px}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--mint);flex:none}
+
+  /* code window */
+  .code-win{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;box-shadow:0 24px 60px -28px rgba(0,0,0,.9);
+  }
+  .code-bar{
+    display:flex;align-items:center;gap:8px;padding:11px 14px;
+    background:var(--panel-2);border-bottom:1px solid var(--line);
+  }
+  .code-bar i{width:10px;height:10px;border-radius:50%;background:#3A4757;display:block}
+  .code-bar i:nth-child(1){background:#E06C6C}
+  .code-bar i:nth-child(2){background:var(--amber)}
+  .code-bar i:nth-child(3){background:var(--mint)}
+  .code-file{margin-left:8px;font-family:var(--mono);font-size:11.5px;color:var(--muted-2)}
+  pre{margin:0;overflow-x:auto;padding:20px 18px;font-family:var(--mono);font-size:12.6px;line-height:1.75}
+  code{font-family:var(--mono)}
+  .c-key{color:#C792EA}
+  .c-fn{color:#82AAFF}
+  .c-str{color:#C3E88D}
+  .c-var{color:#F78C6C}
+  .c-com{color:#5C6B7F;font-style:italic}
+  .c-num{color:#F2B75C}
+  .c-tag{color:#89DDFF}
+
+  /* ---------- sponsor strip ---------- */
+  .sponsor{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);background:var(--ink-2)}
+  .sponsor-inner{display:flex;align-items:center;gap:26px;padding:20px 0;flex-wrap:wrap}
+  .sponsor-label{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted-2);border:1px solid var(--line);border-radius:5px;padding:4px 8px;flex:none;
+  }
+  .sponsor-body{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:.9rem;color:var(--muted)}
+  .sponsor-body strong{color:var(--text);font-weight:600}
+  .sponsor-body a{color:var(--php);border-bottom:1px solid rgba(139,147,217,.35)}
+
+  /* ---------- stats ---------- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:var(--radius);overflow:hidden}
+  .stat{background:var(--ink-2);padding:26px 22px}
+  .stat b{display:block;font-size:1.85rem;letter-spacing:-.03em;font-weight:600}
+  .stat span{font-size:.82rem;color:var(--muted-2);font-family:var(--mono);letter-spacing:.02em}
+
+  /* ---------- learning path ---------- */
+  .path{display:grid;gap:14px}
+  .level{
+    display:grid;grid-template-columns:64px 1fr auto;gap:22px;align-items:start;
+    background:var(--ink-2);border:1px solid var(--line-soft);border-radius:var(--radius);
+    padding:24px 26px;transition:border-color .18s ease,background .18s ease;
+  }
+  .level:hover{border-color:var(--line);background:var(--panel)}
+  .level-num{
+    font-family:var(--mono);font-size:1.5rem;font-weight:700;color:var(--php);
+    line-height:1;padding-top:3px;letter-spacing:-.04em;
+  }
+  .level-num small{display:block;font-size:9.5px;letter-spacing:.14em;color:var(--muted-2);font-weight:500;margin-top:6px}
+  .level h3{font-size:1.12rem;margin-bottom:6px}
+  .level p{color:var(--muted);font-size:.92rem;max-width:640px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px}
+  .chip{
+    font-family:var(--mono);font-size:10.8px;color:var(--muted);
+    background:var(--panel-2);border:1px solid var(--line-soft);
+    border-radius:5px;padding:3px 8px;white-space:nowrap;
+  }
+  .level-side{text-align:right;flex:none}
+  .level-side .count{font-family:var(--mono);font-size:.78rem;color:var(--muted-2);display:block;margin-bottom:8px}
+  .badge{
+    display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+    text-transform:uppercase;padding:3px 8px;border-radius:4px;font-weight:500;
+  }
+  .badge-free{background:rgba(111,227,180,.12);color:var(--mint);border:1px solid rgba(111,227,180,.28)}
+  .badge-pro{background:rgba(139,147,217,.13);color:var(--php);border:1px solid rgba(139,147,217,.3)}
+
+  /* ---------- lessons ---------- */
+  .lessons{background:var(--ink-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .lesson-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .lesson{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;display:flex;flex-direction:column;
+  }
+  .lesson-top{padding:20px 20px 16px;border-bottom:1px solid var(--line-soft)}
+  .lesson-top .eyebrow{font-size:10px}
+  .lesson-top h3{font-size:1.02rem;margin:9px 0 7px}
+  .lesson-top p{font-size:.86rem;color:var(--muted);line-height:1.55}
+  .lesson pre{font-size:11.4px;line-height:1.7;padding:16px 18px;flex:1;background:#0D131A}
+  .lesson-foot{
+    padding:12px 20px;border-top:1px solid var(--line-soft);
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:var(--mono);font-size:11px;color:var(--muted-2);
+  }
+  .lesson-foot a{color:var(--php)}
+
+  /* ---------- ad slot ---------- */
+  .adslot{
+    border:1px dashed var(--line);border-radius:var(--radius);
+    background:repeating-linear-gradient(45deg,rgba(255,255,255,.012) 0 10px,transparent 10px 20px);
+    display:grid;place-items:center;text-align:center;padding:26px 20px;margin:0 auto;
+  }
+  .adslot .ad-label{
+    font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--muted-2);margin-bottom:8px;
+  }
+  .adslot .ad-size{font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .adslot .ad-note{font-size:.78rem;color:var(--muted-2);margin-top:6px;max-width:420px}
+  .ad-leader{max-width:970px;min-height:110px}
+  .ad-rect{max-width:340px;min-height:250px}
+
+  /* ---------- pricing ---------- */
+  .toggle{
+    display:inline-flex;background:var(--panel);border:1px solid var(--line);
+    border-radius:9px;padding:4px;gap:2px;margin-bottom:38px;
+  }
+  .toggle button{
+    background:none;border:0;color:var(--muted);padding:8px 18px;border-radius:6px;
+    font-size:.86rem;font-weight:500;transition:background .15s,color .15s;
+  }
+  .toggle button.active{background:var(--panel-2);color:var(--text)}
+  .toggle .save{color:var(--mint);font-size:.78rem;font-family:var(--mono);margin-left:4px}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+  .plan{
+    background:var(--ink-2);border:1px solid var(--line-soft);border-radius:var(--radius);
+    padding:30px 26px;display:flex;flex-direction:column;position:relative;
+  }
+  .plan.featured{border-color:var(--php);background:var(--panel);box-shadow:0 0 0 1px rgba(139,147,217,.18),0 30px 60px -40px rgba(139,147,217,.5)}
+  .plan-tag{
+    position:absolute;top:-11px;left:26px;background:var(--php);color:#0B0F14;
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
+    padding:4px 9px;border-radius:4px;font-weight:700;
+  }
+  .plan h3{font-size:1.05rem;margin-bottom:6px}
+  .plan .plan-for{font-size:.85rem;color:var(--muted-2);min-height:38px}
+  .price{display:flex;align-items:baseline;gap:6px;margin:18px 0 4px}
+  .price b{font-size:2.5rem;letter-spacing:-.04em;font-weight:600;line-height:1}
+  .price span{font-size:.85rem;color:var(--muted-2);font-family:var(--mono)}
+  .price-note{font-size:.76rem;color:var(--muted-2);font-family:var(--mono);min-height:18px}
+  .plan ul{margin:22px 0 26px;display:grid;gap:10px;font-size:.88rem;color:var(--muted)}
+  .plan li{display:flex;gap:9px;align-items:flex-start;line-height:1.5}
+  .plan li::before{content:"✓";color:var(--mint);font-weight:700;flex:none;font-size:.85rem;margin-top:1px}
+  .plan li.off{color:var(--muted-2)}
+  .plan li.off::before{content:"—";color:var(--muted-2)}
+  .plan .btn{margin-top:auto}
+
+  /* ---------- upsell ---------- */
+  .upsell{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:0;
+    border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--panel);
+  }
+  .upsell-body{padding:40px 38px}
+  .upsell-body h3{font-size:1.5rem;margin:12px 0 12px}
+  .upsell-body p{color:var(--muted);font-size:.95rem;max-width:460px}
+  .upsell-list{display:grid;gap:9px;margin:22px 0 26px;font-size:.88rem;color:var(--muted)}
+  .upsell-list li{display:flex;gap:9px}
+  .upsell-list li::before{content:"→";color:var(--php);flex:none}
+  .upsell-side{
+    background:var(--panel-2);border-left:1px solid var(--line);
+    padding:40px 34px;display:flex;flex-direction:column;justify-content:center;gap:14px;
+  }
+  .upsell-side .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2)}
+  .upsell-side .v{font-size:2.1rem;font-weight:600;letter-spacing:-.03em;line-height:1}
+  .upsell-side .v s{font-size:1rem;color:var(--muted-2);font-weight:400;margin-left:8px}
+  .upsell-side small{font-size:.78rem;color:var(--muted-2);line-height:1.5}
+
+  /* ---------- affiliate ---------- */
+  .affiliate{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .aff{
+    background:var(--ink-2);border:1px solid var(--line-soft);border-radius:var(--radius);
+    padding:22px;display:flex;flex-direction:column;gap:10px;
+  }
+  .aff .aff-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2)}
+  .aff h4{font-size:.98rem}
+  .aff p{font-size:.85rem;color:var(--muted);flex:1}
+  .aff a{font-size:.85rem;color:var(--php);font-weight:500}
+  .aff-disclosure{
+    margin-top:20px;padding:14px 16px;border-radius:10px;
+    background:rgba(139,147,217,.06);border:1px solid rgba(139,147,217,.22);
+    font-size:.79rem;line-height:1.65;color:var(--muted);
+  }
+  .aff-disclosure strong{color:var(--text);font-weight:600}
+  .aff-disclosure a{color:var(--php);border-bottom:1px solid rgba(139,147,217,.35)}
+
+  /* ---------- testimonials ---------- */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .quote{
+    background:var(--ink-2);border:1px solid var(--line-soft);border-radius:var(--radius);
+    padding:26px;display:flex;flex-direction:column;gap:16px;
+  }
+  .quote p{font-size:.94rem;color:var(--text);line-height:1.65;flex:1}
+  .quote p::before{content:"“";color:var(--php);font-size:1.6rem;line-height:0;vertical-align:-.28em;margin-right:2px}
+  .who{display:flex;align-items:center;gap:11px;border-top:1px solid var(--line-soft);padding-top:15px}
+  .avatar{
+    width:36px;height:36px;border-radius:50%;flex:none;display:grid;place-items:center;
+    font-family:var(--mono);font-size:12px;font-weight:700;color:#0B0F14;
+  }
+  .who b{display:block;font-size:.86rem;font-weight:600}
+  .who span{font-size:.76rem;color:var(--muted-2)}
+  .who .avatar{color:#0B0F14;font-size:12px;font-weight:700}
+  .stars{color:var(--amber);font-size:.8rem;letter-spacing:.1em}
+
+  /* ---------- faq ---------- */
+  .faq{max-width:820px}
+  details{
+    border-bottom:1px solid var(--line-soft);padding:0;
+  }
+  details summary{
+    list-style:none;cursor:pointer;padding:20px 40px 20px 0;position:relative;
+    font-weight:500;font-size:1rem;transition:color .15s;
+  }
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{
+    content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);
+    font-family:var(--mono);font-size:1.15rem;color:var(--php);font-weight:400;
+  }
+  details[open] summary::after{content:"−"}
+  details summary:hover{color:var(--php)}
+  details .answer{padding:0 40px 22px 0;color:var(--muted);font-size:.93rem;line-height:1.7}
+
+  /* ---------- newsletter ---------- */
+  .newsletter{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:52px 48px;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;
+    position:relative;overflow:hidden;
+  }
+  .newsletter::after{
+    content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;
+    background:radial-gradient(circle,rgba(111,227,180,.1),transparent 68%);pointer-events:none;
+  }
+  .newsletter h2{font-size:clamp(1.5rem,2.6vw,2rem);margin:12px 0 12px}
+  .newsletter p{color:var(--muted);font-size:.95rem}
+  .nl-form{display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:1}
+  .nl-form input{
+    flex:1;min-width:200px;background:var(--ink);border:1px solid var(--line);
+    border-radius:9px;padding:13px 16px;color:var(--text);font-family:var(--sans);font-size:.92rem;
+  }
+  .nl-form input:focus{outline:none;border-color:var(--php)}
+  .nl-form input::placeholder{color:var(--muted-2)}
+  .nl-note{font-size:.76rem;color:var(--muted-2);margin-top:12px;font-family:var(--mono)}
+  .nl-ok{color:var(--mint);font-size:.88rem;margin-top:12px;display:none}
+  .nl-ok.show{display:block}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line-soft);background:var(--ink-2);padding:60px 0 34px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px}
+  .foot-brand p{color:var(--muted-2);font-size:.86rem;margin-top:14px;max-width:280px;line-height:1.6}
+  .foot-col h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);margin-bottom:14px;font-weight:500}
+  .foot-col a{display:block;font-size:.87rem;color:var(--muted);padding:5px 0;transition:color .15s}
+  .foot-col a:hover{color:var(--text)}
+  .foot-bottom{
+    border-top:1px solid var(--line-soft);padding-top:24px;
+    display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+    font-size:.79rem;color:var(--muted-2);
+  }
+  .placeholder-note{
+    margin-top:26px;border:1px solid rgba(242,183,92,.28);background:rgba(242,183,92,.06);
+    border-radius:10px;padding:16px 18px;font-size:.8rem;color:#D9C39A;line-height:1.6;
+  }
+  .placeholder-note b{color:var(--amber);font-weight:600}
+
+  /* ---------- reveal (additive: content visible by default) ---------- */
+  .reveal{opacity:1}
+  .reveal.in{animation:rise .55s cubic-bezier(.22,.7,.3,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    .reveal.in{animation:none}
+    html{scroll-behavior:auto}
+    .btn:hover{transform:none}
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1000px){
+    .hero-grid{grid-template-columns:1fr;gap:44px}
+    .hero-sub{max-width:none}
+    .lesson-grid{grid-template-columns:1fr}
+    .plans{grid-template-columns:1fr;max-width:520px}
+    .plan.featured{order:-1}
+    .quotes{grid-template-columns:1fr}
+    .affiliate{grid-template-columns:1fr}
+    .upsell{grid-template-columns:1fr}
+    .upsell-side{border-left:0;border-top:1px solid var(--line)}
+    .newsletter{grid-template-columns:1fr;gap:28px;padding:40px 30px}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+    .stats{grid-template-columns:1fr 1fr}
+    .nav-links{display:none}
+    .nav-cta{display:none}
+    .burger{display:block}
+  }
+  @media (max-width:760px){
+    .section{padding:68px 0}
+    .level{grid-template-columns:1fr;gap:14px;padding:22px}
+    .level-num{display:flex;align-items:baseline;gap:10px;padding-top:0}
+    .level-num small{margin-top:0}
+    .level-side{text-align:left;display:flex;align-items:center;gap:12px}
+    .level-side .count{margin-bottom:0}
+    .upsell-body{padding:30px 24px}
+    .upsell-side{padding:28px 24px}
+    .newsletter{padding:34px 22px}
+    .foot-grid{grid-template-columns:1fr}
+    .foot-bottom{flex-direction:column;gap:10px}
+  }
+  @media (max-width:520px){
+    .wrap{padding:0 18px}
+    .hero{padding:52px 0 60px}
+    .hero-actions .btn{width:100%}
+    .stats{grid-template-columns:1fr}
+    .stat{padding:20px}
+    pre{font-size:11px;padding:16px 14px}
+    .plan{padding:26px 22px}
+    .adslot{padding:20px 14px}
+  }
+
+
+  /* ---------- full curriculum index ---------- */
+  .curriculum{background:var(--ink);border-top:1px solid var(--line-soft)}
+  .cl-tools{
+    display:flex;flex-direction:column;gap:16px;margin-bottom:26px;
+    background:var(--ink-2);border:1px solid var(--line-soft);
+    border-radius:var(--radius);padding:20px 22px;
+  }
+  .cl-search{position:relative;display:flex;align-items:center}
+  .cl-search-icon{
+    position:absolute;left:15px;color:var(--muted-2);font-size:1rem;
+    pointer-events:none;line-height:1;
+  }
+  .cl-search input{
+    width:100%;background:var(--panel);border:1px solid var(--line);
+    border-radius:9px;padding:13px 44px 13px 42px;color:var(--text);
+    font-family:var(--sans);font-size:.94rem;outline:none;
+    transition:border-color .16s,background .16s;
+  }
+  .cl-search input::placeholder{color:var(--muted-2)}
+  .cl-search input:focus{border-color:var(--php);background:var(--panel-2)}
+  .cl-clear{
+    position:absolute;right:10px;background:none;border:0;color:var(--muted-2);
+    font-size:.9rem;padding:6px 8px;border-radius:6px;line-height:1;
+  }
+  .cl-clear:hover{color:var(--text);background:var(--panel-2)}
+  .cl-filters{display:flex;flex-wrap:wrap;gap:7px}
+  .cl-chip{
+    background:var(--panel);border:1px solid var(--line-soft);color:var(--muted);
+    border-radius:7px;padding:6px 11px;font-family:var(--mono);font-size:11.5px;
+    letter-spacing:.02em;transition:all .15s;display:inline-flex;gap:6px;align-items:center;
+  }
+  .cl-chip span{color:var(--muted-2);font-size:10.5px}
+  .cl-chip:hover{border-color:var(--line);color:var(--text)}
+  .cl-chip.active{
+    background:rgba(139,147,217,.14);border-color:rgba(139,147,217,.45);color:#C3C8F0;
+  }
+  .cl-chip.active span{color:var(--php)}
+  .cl-status{
+    display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:11.5px;color:var(--muted-2);
+    padding-top:14px;border-top:1px solid var(--line-soft);
+  }
+  .cl-status #clCount{color:var(--php);margin-right:auto}
+  .cl-link{
+    background:none;border:0;color:var(--muted);font-family:var(--mono);
+    font-size:11.5px;padding:0;border-bottom:1px solid var(--line);
+  }
+  .cl-link:hover{color:var(--text);border-color:var(--php)}
+
+  .cl-groups{display:flex;flex-direction:column;gap:10px}
+  .cl-group{
+    background:var(--ink-2);border:1px solid var(--line-soft);
+    border-radius:var(--radius);overflow:hidden;
+  }
+  .cl-group[open]{border-color:var(--line)}
+  .cl-group>summary{
+    display:grid;grid-template-columns:52px 1fr auto 20px;gap:16px;
+    align-items:center;padding:18px 22px;cursor:pointer;list-style:none;
+    transition:background .15s;
+  }
+  .cl-group>summary::-webkit-details-marker{display:none}
+  .cl-group>summary:hover{background:var(--panel)}
+  .cl-lv{
+    font-family:var(--mono);font-size:1.15rem;font-weight:700;color:var(--php);
+    letter-spacing:-.03em;
+  }
+  .cl-title b{display:block;font-size:1rem;font-weight:600;margin-bottom:3px}
+  .cl-title em{
+    display:block;font-style:normal;font-size:.83rem;color:var(--muted-2);
+    line-height:1.5;max-width:70ch;
+  }
+  .cl-count{
+    font-family:var(--mono);font-size:11px;color:var(--muted-2);white-space:nowrap;
+  }
+  .cl-chev{color:var(--muted-2);font-size:.8rem;transition:transform .2s;text-align:center}
+  .cl-group[open] .cl-chev{transform:rotate(180deg)}
+
+  .cl-list{border-top:1px solid var(--line-soft)}
+  .cl-row{border-bottom:1px solid var(--line-soft)}
+  .cl-row:last-child{border-bottom:0}
+  .cl-row>a{
+    display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;
+    padding:13px 22px;transition:background .13s;
+  }
+  .cl-row>a:hover{background:var(--panel)}
+  .cl-num{
+    font-family:var(--mono);font-size:11.5px;color:var(--muted-2);
+    letter-spacing:.02em;
+  }
+  .cl-main b{display:block;font-size:.93rem;font-weight:500;margin-bottom:2px}
+  .cl-main em{
+    display:block;font-style:normal;font-size:.81rem;color:var(--muted-2);
+    line-height:1.45;
+  }
+  .cl-row>a:hover .cl-main b{color:#fff}
+  .cl-meta{display:flex;align-items:center;gap:12px;white-space:nowrap}
+  .cl-time{font-family:var(--mono);font-size:10.5px;color:var(--muted-2)}
+  .cl-row[hidden]{display:none}
+  .cl-group[hidden]{display:none}
+  .cl-empty{
+    text-align:center;color:var(--muted-2);font-size:.92rem;
+    padding:44px 20px;border:1px dashed var(--line);border-radius:var(--radius);
+  }
+  @media(max-width:760px){
+    .cl-group>summary{grid-template-columns:40px 1fr 20px;gap:12px;padding:16px 16px}
+    .cl-count{display:none}
+    .cl-title em{display:none}
+    .cl-row>a{grid-template-columns:34px 1fr;gap:10px;padding:12px 16px}
+    .cl-meta{grid-column:2;justify-content:flex-start;margin-top:5px}
+    .cl-main em{font-size:.79rem}
+    .cl-tools{padding:16px}
+  }
+
+
+  /* ---------- feature matrix ---------- */
+  .matrix-wrap{margin-top:44px;border:1px solid var(--line-soft);border-radius:var(--radius);
+    background:var(--ink-2);overflow:hidden}
+  .matrix-title{font-size:1rem;padding:20px 24px;border-bottom:1px solid var(--line-soft);
+    margin:0;letter-spacing:-.01em}
+  .matrix-scroll{overflow-x:auto}
+  .matrix{width:100%;border-collapse:collapse;font-size:.86rem;min-width:560px}
+  .matrix th,.matrix td{padding:12px 18px;text-align:left;border-bottom:1px solid var(--line-soft)}
+  .matrix thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted-2);font-weight:500;background:var(--panel);
+    position:sticky;top:0}
+  .matrix thead th.mx-pro{color:var(--php)}
+  .matrix tbody th{font-weight:500;color:var(--text);font-size:.86rem}
+  .matrix tbody td{color:var(--muted);text-align:center;width:16%}
+  .matrix tbody td:first-of-type{text-align:center}
+  .matrix .mx-sub{display:block;font-size:.72rem;color:var(--muted-2);margin-top:2px}
+  .matrix .yes{color:var(--mint);font-weight:700}
+  .matrix .no{color:var(--muted-2)}
+  .matrix tbody tr:hover{background:rgba(139,147,217,.04)}
+  .matrix .mx-price th,.matrix .mx-price td{border-bottom:0;font-family:var(--mono);
+    font-size:.8rem;color:var(--text);padding-top:16px;padding-bottom:18px}
+  .matrix .mx-price td{color:var(--php)}
+
+  /* ---------- signed-in nav chip ---------- */
+  .lp-user{display:flex;align-items:center;gap:9px;padding:5px 12px 5px 5px;
+    border:1px solid var(--line-soft);border-radius:999px;background:var(--ink-2);
+    transition:border-color .16s}
+  .lp-user:hover{border-color:var(--php)}
+  .lp-avatar{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+    background:linear-gradient(150deg,var(--php),var(--php-deep));color:#0B0F14;
+    font-family:var(--mono);font-size:10.5px;font-weight:700;flex:none}
+  .lp-user-txt{display:flex;flex-direction:column;line-height:1.2}
+  .lp-user-txt b{font-size:.82rem;font-weight:600}
+  .lp-user-txt em{font-style:normal;font-family:var(--mono);font-size:9.5px;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--mint)}
+  @media(max-width:760px){
+    .matrix th,.matrix td{padding:10px 12px}
+  }
+
+  /* ---------- support / donation ---------- */
+  .support-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:26px;align-items:start}
+  .support-side{border:1px solid var(--line-soft);background:var(--panel);border-radius:var(--radius);
+    padding:26px 28px}
+  .support-side h3{font-size:1.02rem;margin:0 0 16px}
+  .support-list li{padding:12px 0;border-bottom:1px solid var(--line-soft)}
+  .support-list li:last-child{border-bottom:0;padding-bottom:0}
+  .support-list b{display:block;font-size:.9rem;font-weight:600;margin-bottom:3px}
+  .support-list span{display:block;font-size:.83rem;color:var(--muted);line-height:1.55}
+  .support-note{margin:18px 0 0;padding-top:16px;border-top:1px solid var(--line-soft);
+    font-size:.8rem;color:var(--muted-2);line-height:1.6}
+  @media(max-width:900px){.support-grid{grid-template-columns:1fr}}
+  /* ---------- print ---------- */
+  @media print{
+    body{background:#fff;color:#111}
+    .nav,.adslot,.sponsor,.newsletter,.burger,.hero::before{display:none!important}
+    .section{padding:24px 0;page-break-inside:avoid}
+    .level,.plan,.lesson,.quote,.aff,.upsell{border-color:#ccc;background:#fff;box-shadow:none}
+    .code-win,.lesson pre{background:#f6f6f6;border-color:#ddd}
+    a{color:#111}
+  }
+</style>
+<link rel="stylesheet" href="assets/donation.css">
+<!-- Privacy-friendly analytics (Plausible). TODO: replace data-domain with your real domain. -->
+<script defer data-domain="learnphp.example" src="https://plausible.io/js/script.js"></script>
+<script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};</script>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo">
+      <span class="logo-mark">&lt;?</span>
+      Learn<span style="color:var(--php)">PHP</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#path">Curriculum</a>
+      <a href="#curriculum">All lessons</a>
+      <a href="#support">Support</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta" data-lp-nav></div>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+  <div class="wrap">
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#path">Curriculum</a>
+      <a href="#curriculum">All lessons</a>
+      <a href="#support">Support</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#support" class="btn btn-primary btn-block">Support this site</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">PHP 8.1+ · 8 levels · 96 lessons</p>
+      <h1>Learn PHP the way it's <em>actually</em> written in production.</h1>
+      <p class="hero-sub">
+        Most tutorials stop at <code style="color:var(--php)">echo "Hello"</code>. This path takes you from
+        your first script to a deployed, secured backend — prepared statements, sessions, OOP and the
+        security mistakes that get apps breached.
+      </p>
+      <div class="hero-actions">
+        <a href="lessons/lesson-01.html" class="btn btn-primary">Start lesson 1 →</a>
+        <a href="#curriculum" class="btn btn-ghost">Browse all 96</a>
+      </div>
+      <div class="hero-meta">
+        <span><i class="dot"></i>No account needed</span>
+        <span><i class="dot"></i>All 96 lessons free</span>
+        <span><i class="dot"></i>No paywall, ever</span>
+      </div>
+    </div>
+
+    <div class="code-win">
+      <div class="code-bar">
+        <i></i><i></i><i></i>
+        <span class="code-file">index.php</span>
+      </div>
+<pre><code><span class="c-tag">&lt;?php</span>
+<span class="c-key">declare</span>(strict_types=<span class="c-num">1</span>);
+
+<span class="c-var">$products</span> = [
+    [<span class="c-str">'name'</span> =&gt; <span class="c-str">'PHP Handbook'</span>, <span class="c-str">'price'</span> =&gt; <span class="c-num">29.00</span>],
+    [<span class="c-str">'name'</span> =&gt; <span class="c-str">'OOP Deep Dive'</span>, <span class="c-str">'price'</span> =&gt; <span class="c-num">39.00</span>],
+];
+
+<span class="c-com">// Level 3: arrays + Level 4: functions</span>
+<span class="c-var">$total</span> = <span class="c-fn">array_sum</span>(<span class="c-fn">array_column</span>(<span class="c-var">$products</span>, <span class="c-str">'price'</span>));
+
+<span class="c-key">foreach</span> (<span class="c-var">$products</span> <span class="c-key">as</span> <span class="c-var">$p</span>) {
+    <span class="c-fn">printf</span>(
+        <span class="c-str">"%-16s $%6.2f\n"</span>,
+        <span class="c-fn">htmlspecialchars</span>(<span class="c-var">$p</span>[<span class="c-str">'name'</span>]),
+        <span class="c-var">$p</span>[<span class="c-str">'price'</span>]
+    );
+}
+
+<span class="c-fn">printf</span>(<span class="c-str">"%-16s $%6.2f\n"</span>, <span class="c-str">'TOTAL'</span>, <span class="c-var">$total</span>);
+<span class="c-com">// PHP Handbook      $ 29.00</span>
+<span class="c-com">// OOP Deep Dive     $ 39.00</span>
+<span class="c-com">// TOTAL             $ 68.00</span></code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPONSOR STRIP ============ -->
+<!--
+  DIRECT SPONSOR SLOT (not an ad network).
+  Sell this strip directly: it is the highest-value placement on the page.
+  Rate-card suggestion: $400-800 / month at 20k pageviews.
+  TODO: replace the href with the sponsor's tracked URL and the copy with
+        their approved wording. Keep the "Sponsored" label - required by the
+        FTC endorsement guides.
+-->
+<div class="sponsor">
+  <div class="wrap sponsor-inner">
+    <span class="sponsor-label">Sponsored</span>
+    <div class="sponsor-body">
+      <strong>Deploy your first PHP app in 4 minutes.</strong>
+      <span>Managed PHP hosting with free SSL and one-click staging.</span>
+      <!-- TODO: insert sponsor tracked URL + publisher/affiliate ID -->
+      <a href="https://www.digitalocean.com/?refcode=REPLACE_WITH_YOUR_REFCODE"
+         rel="sponsored noopener" target="_blank">Try it free →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STATS ============ -->
+<section class="section" style="padding:56px 0">
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><b>96</b><span>lessons</span></div>
+      <div class="stat"><b>8</b><span>levels</span></div>
+      <div class="stat"><b>40+</b><span>code challenges</span></div>
+      <div class="stat"><b>100%</b><span>free lessons</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEARNING PATH ============ -->
+<section class="section" id="path" style="padding-top:40px">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">The curriculum</p>
+      <h2>Eight levels, in the order you actually need them.</h2>
+      <p>
+        Every level maps to a real block of the PHP language — the same topics covered by the
+        W3Schools PHP tutorial, re-sequenced so each one lands when you can use it. All eight levels are free.
+      </p>
+    </div>
+
+    <div class="path">
+
+      <article class="level reveal" id="level-1">
+        <div class="level-num">01<small>LEVEL</small></div>
+        <div>
+          <h3>Foundations &amp; Syntax</h3>
+          <p>Get a server running, then learn the grammar: how PHP embeds in HTML, how variables and scope work, and why <code>==</code> and <code>===</code> are not the same thing.</p>
+          <div class="chips">
+            <span class="chip">intro</span><span class="chip">install</span><span class="chip">syntax</span>
+            <span class="chip">comments</span><span class="chip">variables</span><span class="chip">scope</span>
+            <span class="chip">echo / print</span><span class="chip">data types</span><span class="chip">strings</span>
+            <span class="chip">numbers</span><span class="chip">casting</span><span class="chip">math</span>
+            <span class="chip">constants</span><span class="chip">operators</span>
+          </div>
+        </div>
+        <div class="level-side">
+          <span class="count">14 lessons</span>
+          <span class="badge badge-free">Free</span>
+        </div>
+      </article>
+
+      <article class="level reveal" id="level-2">
+        <div class="level-num">02<small>LEVEL</small></div>
+        <div>
+          <h3>Control Flow</h3>
+          <p>Branching and looping, including the modern <code>match</code> expression that replaces most <code>switch</code> blocks in PHP 8 code.</p>
+          <div class="chips">
+            <span class="chip">if / else / elseif</span><span class="chip">if operators</span>
+            <span class="chip">shorthand if</span><span class="chip">nested if</span><span class="chip">switch</span>
+            <span class="chip">match</span><span class="chip">while</span><span class="chip">do-while</span>
+            <span class="chip">for</span><span class="chip">foreach</span><span class="chip">break</span><span class="chip">continue</span>
+          </div>
+        </div>
+        <div class="level-side">
+          <span class="count">12 lessons</span>
+          <span class="badge badge-free">Free</span>
+        </div>
+      </article>
+
+      <article class="level reveal" id="level-3">
+        <div class="level-num">03<small>LEVEL</small></div>
+        <div>
+          <h3>Arrays &amp; Strings</h3>
+          <p>Where most real PHP work happens. Indexed and associative arrays, multidimensional data, sorting, and the string functions you will reach for daily.</p>
+          <div class="chips">
+            <span class="chip">indexed arrays</span><span class="chip">associative arrays</span>
+            <span class="chip">create / access</span><span class="chip">update / add / remove</span>
+            <span class="chip">sorting</span><span class="chip">multidimensional</span>
+            <span class="chip">array functions</span><span class="chip">string functions</span>
+            <span class="chip">concatenate</span><span class="chip">slicing</span><span class="chip">escape chars</span>
+          </div>
+        </div>
+        <div class="level-side">
+          <span class="count">14 lessons</span>
+          <span class="badge badge-free">Free</span>
+        </div>
+      </article>
+
+      <article class="level reveal" id="level-4">
+        <div class="level-num">04<small>LEVEL</small></div>
+        <div>
+          <h3>Functions &amp; Reuse</h3>
+          <p>User-defined functions with typed parameters and return values, callbacks, <code>include</code> vs <code>require</code>, dates, JSON and regular expressions.</p>
+          <div class="chips">
+            <span class="chip">user functions</span><span class="chip">typed params</span>
+            <span class="chip">callback functions</span><span class="chip">include / require</span>
+            <span class="chip">date &amp; time</span><span class="chip">JSON</span><span class="chip">regex</span>
+            <span class="chip">regex functions</span>
+          </div>
+        </div>
+        <div class="level-side">
+          <span class="count">8 lessons</span>
+          <span class="badge badge-free">Free</span>
+        </div>
+      </article>
+
+      <article class="level reveal" id="level-5">
+        <div class="level-num">05<small>LEVEL</small></div>
+        <div>
+          <h3>Forms, State &amp; Files</h3>
+          <p>Collect input safely, keep users logged in, and handle uploads without opening a hole. This is the level where a beginner app becomes a real one.</p>
+          <div class="chips">
+            <span class="chip">form handling</span><span class="chip">validation</span>
+            <span class="chip">required fields</span><span class="chip">URL / email</span>
+            <span class="chip">superglobals</span><span class="chip">$_GET / $_POST</span>
+            <span class="chip">cookies</span><span class="chip">sessions</span><span class="chip">filters</span>
+            <span class="chip">file upload</span><span class="chip">file read / write</span>
+          </div>
+        </div>
+        <div class="level-side">
+          <span class="count">12 lessons</span>
+          <span class="badge badge-free">Free</span>
+        </div>
+      </article>
+
+      <article class="level reveal" id="level-6">
+        <div class="level-num">06<small>LEVEL</small></div>
+        <div>
+          <h3>Object-Oriented PHP</h3>
+          <p>Classes, constructors, access modifiers, inheritance, interfaces, traits and namespaces — the vocabulary every framework expects you to already have.</p>
+          <div class="chips">
+            <span class="chip">classes / objects</span><span class="chip">constructor</span>
+            <span class="chip">destructor</span><span class="chip">access modifiers</span>
+            <span class="chip">inheritance</span><span class="chip">abstract classes</span>
+            <span class="chip">interfaces</span><span class="chip">traits</span>
+            <span class="chip">static methods</span><span class="chip">namespaces</span><span class="chip">iterables</span>
+          </div>
+        </div>
+        <div class="level-side">
+          <span class="count">14 lessons</span>
+          <span class="badge badge-free">Free</span>
+        </div>
+      </article>
+
+      <article class="level reveal" id="level-7">
+        <div class="level-num">07<small>LEVEL</small></div>
+        <div>
+          <h3>MySQL &amp; PDO</h3>
+          <p>Connect, model, query and mutate. Every query in this level is written with prepared statements from the first line — never string concatenation.</p>
+          <div class="chips">
+            <span class="chip">connect</span><span class="chip">create DB</span>
+            <span class="chip">create table</span><span class="chip">insert</span>
+            <span class="chip">last insert ID</span><span class="chip">prepared statements</span>
+            <span class="chip">select / where</span><span class="chip">order by</span>
+            <span class="chip">update / delete</span><span class="chip">limit</span>
+          </div>
+        </div>
+        <div class="level-side">
+          <span class="count">14 lessons</span>
+          <span class="badge badge-free">Free</span>
+        </div>
+      </article>
+
+      <article class="level reveal" id="level-8">
+        <div class="level-num">08<small>LEVEL</small></div>
+        <div>
+          <h3>Security &amp; Production</h3>
+          <p>The level that separates a tutorial project from something you can put on the internet: XSS, CSRF, password hashing, session hardening, error handling and deployment.</p>
+          <div class="chips">
+            <span class="chip">XSS &amp; escaping</span><span class="chip">CSRF tokens</span>
+            <span class="chip">password_hash</span><span class="chip">session hardening</span>
+            <span class="chip">upload safety</span><span class="chip">exceptions</span>
+            <span class="chip">error handling</span><span class="chip">deployment</span>
+          </div>
+        </div>
+        <div class="level-side">
+          <span class="count">8 lessons</span>
+          <span class="badge badge-free">Free</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FULL CURRICULUM INDEX ============ -->
+<section class="section curriculum" id="curriculum">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">All 96 lessons</p>
+      <h2>The complete curriculum, every lesson browsable.</h2>
+      <p>
+        Eight levels, 96 lessons, in the order you should take them. Search by topic or filter by level &mdash;
+        every row links straight to the full lesson. All 96 are free, with no account and no preview cut-off.
+      </p>
+    </div>
+
+    <div class="cl-tools">
+      <div class="cl-search">
+        <span class="cl-search-icon" aria-hidden="true">&#9906;</span>
+        <input type="search" id="clSearch" placeholder="Search 96 lessons &mdash; try &quot;session&quot;, &quot;PDO&quot;, &quot;match&quot;"
+               aria-label="Search lessons" autocomplete="off">
+        <button type="button" id="clClear" class="cl-clear" aria-label="Clear search" hidden>&#10005;</button>
+      </div>
+      <div class="cl-filters" role="group" aria-label="Filter by level">
+        <button type="button" class="cl-chip active" data-filter="all">All <span>96</span></button>
+        <button type="button" class="cl-chip" data-filter="1">L1 <span>14</span></button>
+        <button type="button" class="cl-chip" data-filter="2">L2 <span>12</span></button>
+        <button type="button" class="cl-chip" data-filter="3">L3 <span>14</span></button>
+        <button type="button" class="cl-chip" data-filter="4">L4 <span>8</span></button>
+        <button type="button" class="cl-chip" data-filter="5">L5 <span>12</span></button>
+        <button type="button" class="cl-chip" data-filter="6">L6 <span>14</span></button>
+        <button type="button" class="cl-chip" data-filter="7">L7 <span>14</span></button>
+        <button type="button" class="cl-chip" data-filter="8">L8 <span>8</span></button>
+      </div>
+      <div class="cl-status">
+        <span id="clCount">96 lessons</span>
+        <button type="button" id="clExpand" class="cl-link">Expand all</button>
+        <button type="button" id="clCollapse" class="cl-link">Collapse all</button>
+      </div>
+    </div>
+
+    <div class="cl-groups" id="clGroups">
+    <details class="cl-group" data-lv="1" open>
+      <summary>
+        <span class="cl-lv">01</span>
+        <span class="cl-title"><b>Foundations &amp; Syntax</b><em>Get a server running, then learn the grammar: how PHP embeds in HTML, how variables and scope work, and why == and === are not the same thing.</em></span>
+        <span class="cl-count">14 lessons</span>
+        <span class="cl-chev" aria-hidden="true">&#9662;</span>
+      </summary>
+      <ul class="cl-list">
+        <li class="cl-row" data-lv="1" data-pro="0" data-search="what php is and where it runs the request/response model that explains every other php behaviour. foundations &amp; syntax"><a href="lessons/lesson-01.html"><span class="cl-num">01</span><span class="cl-main"><b>What PHP Is and Where It Runs</b><em>The request/response model that explains every other PHP behaviour.</em></span><span class="cl-meta"><span class="cl-time">5 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="1" data-pro="0" data-search="installing php and a local server get a working php 8 runtime and a document root you can serve from. foundations &amp; syntax"><a href="lessons/lesson-02.html"><span class="cl-num">02</span><span class="cl-main"><b>Installing PHP and a Local Server</b><em>Get a working PHP 8 runtime and a document root you can serve from.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="1" data-pro="0" data-search="php syntax and tags opening tags, statement terminators, and mixing php with html. foundations &amp; syntax"><a href="lessons/lesson-03.html"><span class="cl-num">03</span><span class="cl-main"><b>PHP Syntax and Tags</b><em>Opening tags, statement terminators, and mixing PHP with HTML.</em></span><span class="cl-meta"><span class="cl-time">6 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="1" data-pro="0" data-search="comments and code style three comment styles, and the psr-12 habits that make diffs readable. foundations &amp; syntax"><a href="lessons/lesson-04.html"><span class="cl-num">04</span><span class="cl-main"><b>Comments and Code Style</b><em>Three comment styles, and the PSR-12 habits that make diffs readable.</em></span><span class="cl-meta"><span class="cl-time">4 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="1" data-pro="0" data-search="variables and assignment naming, reassignment, and why double quotes interpolate. foundations &amp; syntax"><a href="lessons/lesson-05.html"><span class="cl-num">05</span><span class="cl-main"><b>Variables and Assignment</b><em>Naming, reassignment, and why double quotes interpolate.</em></span><span class="cl-meta"><span class="cl-time">6 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="1" data-pro="0" data-search="variable scope local, global, static and how functions see the outside world. foundations &amp; syntax"><a href="lessons/lesson-06.html"><span class="cl-num">06</span><span class="cl-main"><b>Variable Scope</b><em>Local, global, static and how functions see the outside world.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="1" data-pro="0" data-search="echo, print and output the two output constructs, and when to reach for printf instead. foundations &amp; syntax"><a href="lessons/lesson-07.html"><span class="cl-num">07</span><span class="cl-main"><b>echo, print and Output</b><em>The two output constructs, and when to reach for printf instead.</em></span><span class="cl-meta"><span class="cl-time">5 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="1" data-pro="0" data-search="data types the eight types, and what gettype and var_dump actually tell you. foundations &amp; syntax"><a href="lessons/lesson-08.html"><span class="cl-num">08</span><span class="cl-main"><b>Data Types</b><em>The eight types, and what gettype and var_dump actually tell you.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="1" data-pro="0" data-search="strings quoting, length, and the multibyte trap. foundations &amp; syntax"><a href="lessons/lesson-09.html"><span class="cl-num">09</span><span class="cl-main"><b>Strings</b><em>Quoting, length, and the multibyte trap.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="1" data-pro="0" data-search="numbers and numeric strings integers, floats, and the comparisons that surprise people. foundations &amp; syntax"><a href="lessons/lesson-10.html"><span class="cl-num">10</span><span class="cl-main"><b>Numbers and Numeric Strings</b><em>Integers, floats, and the comparisons that surprise people.</em></span><span class="cl-meta"><span class="cl-time">6 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="1" data-pro="0" data-search="type casting and juggling explicit casts, and why strict_types changes everything. foundations &amp; syntax"><a href="lessons/lesson-11.html"><span class="cl-num">11</span><span class="cl-main"><b>Type Casting and Juggling</b><em>Explicit casts, and why strict_types changes everything.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="1" data-pro="0" data-search="math functions rounding, min/max, powers and random numbers done safely. foundations &amp; syntax"><a href="lessons/lesson-12.html"><span class="cl-num">12</span><span class="cl-main"><b>Math Functions</b><em>Rounding, min/max, powers and random numbers done safely.</em></span><span class="cl-meta"><span class="cl-time">5 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="1" data-pro="0" data-search="constants const vs define, and why constants belong in one place. foundations &amp; syntax"><a href="lessons/lesson-13.html"><span class="cl-num">13</span><span class="cl-main"><b>Constants</b><em>const vs define, and why constants belong in one place.</em></span><span class="cl-meta"><span class="cl-time">5 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="1" data-pro="0" data-search="operators and precedence arithmetic, assignment, comparison, null coalescing and the spaceship. foundations &amp; syntax"><a href="lessons/lesson-14.html"><span class="cl-num">14</span><span class="cl-main"><b>Operators and Precedence</b><em>Arithmetic, assignment, comparison, null coalescing and the spaceship.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+      </ul>
+    </details>
+
+    <details class="cl-group" data-lv="2" open>
+      <summary>
+        <span class="cl-lv">02</span>
+        <span class="cl-title"><b>Control Flow</b><em>Branching and looping, including the modern match expression that replaces most switch blocks in PHP 8 code.</em></span>
+        <span class="cl-count">12 lessons</span>
+        <span class="cl-chev" aria-hidden="true">&#9662;</span>
+      </summary>
+      <ul class="cl-list">
+        <li class="cl-row" data-lv="2" data-pro="0" data-search="if, else and elseif the three shapes of a conditional and when to invert one. control flow"><a href="lessons/lesson-15.html"><span class="cl-num">15</span><span class="cl-main"><b>if, else and elseif</b><em>The three shapes of a conditional and when to invert one.</em></span><span class="cl-meta"><span class="cl-time">6 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="2" data-pro="0" data-search="comparison and logical operators in conditions truthiness, short-circuiting, and the values that are falsy. control flow"><a href="lessons/lesson-16.html"><span class="cl-num">16</span><span class="cl-main"><b>Comparison and Logical Operators in Conditions</b><em>Truthiness, short-circuiting, and the values that are falsy.</em></span><span class="cl-meta"><span class="cl-time">6 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="2" data-pro="0" data-search="shorthand if and the ternary operator ternary, elvis, and when a ternary becomes unreadable. control flow"><a href="lessons/lesson-17.html"><span class="cl-num">17</span><span class="cl-main"><b>Shorthand if and the Ternary Operator</b><em>Ternary, elvis, and when a ternary becomes unreadable.</em></span><span class="cl-meta"><span class="cl-time">5 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="2" data-pro="0" data-search="nested conditionals and early returns flatten logic with guard clauses instead of indenting deeper. control flow"><a href="lessons/lesson-18.html"><span class="cl-num">18</span><span class="cl-main"><b>Nested Conditionals and Early Returns</b><em>Flatten logic with guard clauses instead of indenting deeper.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="2" data-pro="0" data-search="switch statements fall-through, strict comparison, and the missing break bug. control flow"><a href="lessons/lesson-19.html"><span class="cl-num">19</span><span class="cl-main"><b>switch Statements</b><em>Fall-through, strict comparison, and the missing break bug.</em></span><span class="cl-meta"><span class="cl-time">6 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="2" data-pro="0" data-search="match expressions the php 8 replacement for switch: strict, an expression, exhaustive. control flow"><a href="lessons/lesson-20.html"><span class="cl-num">20</span><span class="cl-main"><b>match Expressions</b><em>The PHP 8 replacement for switch: strict, an expression, exhaustive.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="2" data-pro="0" data-search="while loops condition-first looping and the infinite loop you will write once. control flow"><a href="lessons/lesson-21.html"><span class="cl-num">21</span><span class="cl-main"><b>while Loops</b><em>Condition-first looping and the infinite loop you will write once.</em></span><span class="cl-meta"><span class="cl-time">5 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="2" data-pro="0" data-search="do-while loops run once, then decide - the right shape for retry and menu loops. control flow"><a href="lessons/lesson-22.html"><span class="cl-num">22</span><span class="cl-main"><b>do-while Loops</b><em>Run once, then decide - the right shape for retry and menu loops.</em></span><span class="cl-meta"><span class="cl-time">4 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="2" data-pro="0" data-search="for loops three-part loops, and iterating backwards or by step. control flow"><a href="lessons/lesson-23.html"><span class="cl-num">23</span><span class="cl-main"><b>for Loops</b><em>Three-part loops, and iterating backwards or by step.</em></span><span class="cl-meta"><span class="cl-time">6 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="2" data-pro="0" data-search="foreach loops value, key, references, and modifying the array you iterate. control flow"><a href="lessons/lesson-24.html"><span class="cl-num">24</span><span class="cl-main"><b>foreach Loops</b><em>Value, key, references, and modifying the array you iterate.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="2" data-pro="0" data-search="break and continue leaving a loop early, and the level argument nobody remembers. control flow"><a href="lessons/lesson-25.html"><span class="cl-num">25</span><span class="cl-main"><b>break and continue</b><em>Leaving a loop early, and the level argument nobody remembers.</em></span><span class="cl-meta"><span class="cl-time">5 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="2" data-pro="0" data-search="loop patterns and common bugs accumulators, early exit, and the four loop bugs reviewers find. control flow"><a href="lessons/lesson-26.html"><span class="cl-num">26</span><span class="cl-main"><b>Loop Patterns and Common Bugs</b><em>Accumulators, early exit, and the four loop bugs reviewers find.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+      </ul>
+    </details>
+
+    <details class="cl-group" data-lv="3" open>
+      <summary>
+        <span class="cl-lv">03</span>
+        <span class="cl-title"><b>Arrays &amp; Strings</b><em>Where most real PHP work happens. Indexed and associative arrays, multidimensional data, sorting, and the string functions you will reach for daily.</em></span>
+        <span class="cl-count">14 lessons</span>
+        <span class="cl-chev" aria-hidden="true">&#9662;</span>
+      </summary>
+      <ul class="cl-list">
+        <li class="cl-row" data-lv="3" data-pro="0" data-search="indexed arrays zero-based lists, appending, and the holes that surprise you. arrays &amp; strings"><a href="lessons/lesson-27.html"><span class="cl-num">27</span><span class="cl-main"><b>Indexed Arrays</b><em>Zero-based lists, appending, and the holes that surprise you.</em></span><span class="cl-meta"><span class="cl-time">6 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="3" data-pro="0" data-search="associative arrays string keys, lookups, and the difference between isset and array_key_exists. arrays &amp; strings"><a href="lessons/lesson-28.html"><span class="cl-num">28</span><span class="cl-main"><b>Associative Arrays</b><em>String keys, lookups, and the difference between isset and array_key_exists.</em></span><span class="cl-meta"><span class="cl-time">6 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="3" data-pro="0" data-search="creating and accessing arrays short syntax, range, list(), and safe access. arrays &amp; strings"><a href="lessons/lesson-29.html"><span class="cl-num">29</span><span class="cl-main"><b>Creating and Accessing Arrays</b><em>Short syntax, range, list(), and safe access.</em></span><span class="cl-meta"><span class="cl-time">5 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="3" data-pro="0" data-search="adding, updating and removing elements push, pop, shift, unshift, splice and unset. arrays &amp; strings"><a href="lessons/lesson-30.html"><span class="cl-num">30</span><span class="cl-main"><b>Adding, Updating and Removing Elements</b><em>push, pop, shift, unshift, splice and unset.</em></span><span class="cl-meta"><span class="cl-time">6 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="3" data-pro="0" data-search="sorting arrays sort vs asort vs ksort, and sorting by a computed key. arrays &amp; strings"><a href="lessons/lesson-31.html"><span class="cl-num">31</span><span class="cl-main"><b>Sorting Arrays</b><em>sort vs asort vs ksort, and sorting by a computed key.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="3" data-pro="0" data-search="multidimensional arrays nested data, safe traversal, and flattening. arrays &amp; strings"><a href="lessons/lesson-32.html"><span class="cl-num">32</span><span class="cl-main"><b>Multidimensional Arrays</b><em>Nested data, safe traversal, and flattening.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="3" data-pro="0" data-search="array functions map, filter, reduce and the ones that replace a foreach. arrays &amp; strings"><a href="lessons/lesson-33.html"><span class="cl-num">33</span><span class="cl-main"><b>Array Functions</b><em>map, filter, reduce and the ones that replace a foreach.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="3" data-pro="0" data-search="array destructuring and spread swapping, skipping, and merging with the spread operator. arrays &amp; strings"><a href="lessons/lesson-34.html"><span class="cl-num">34</span><span class="cl-main"><b>Array Destructuring and Spread</b><em>Swapping, skipping, and merging with the spread operator.</em></span><span class="cl-meta"><span class="cl-time">6 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="3" data-pro="0" data-search="string functions the twenty functions that cover most real string work. arrays &amp; strings"><a href="lessons/lesson-35.html"><span class="cl-num">35</span><span class="cl-main"><b>String Functions</b><em>The twenty functions that cover most real string work.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="3" data-pro="0" data-search="concatenation and interpolation the dot operator, complex interpolation, and heredoc. arrays &amp; strings"><a href="lessons/lesson-36.html"><span class="cl-num">36</span><span class="cl-main"><b>Concatenation and Interpolation</b><em>The dot operator, complex interpolation, and heredoc.</em></span><span class="cl-meta"><span class="cl-time">5 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="3" data-pro="0" data-search="substrings and slicing substr, negative offsets, and cutting on character boundaries. arrays &amp; strings"><a href="lessons/lesson-37.html"><span class="cl-num">37</span><span class="cl-main"><b>Substrings and Slicing</b><em>substr, negative offsets, and cutting on character boundaries.</em></span><span class="cl-meta"><span class="cl-time">6 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="3" data-pro="0" data-search="searching and replacing in strings strpos, str_contains, preg_replace and the replace-once trap. arrays &amp; strings"><a href="lessons/lesson-38.html"><span class="cl-num">38</span><span class="cl-main"><b>Searching and Replacing in Strings</b><em>strpos, str_contains, preg_replace and the replace-once trap.</em></span><span class="cl-meta"><span class="cl-time">6 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="3" data-pro="0" data-search="escape characters and heredoc \n, \t, \$, and the three quoting styles. arrays &amp; strings"><a href="lessons/lesson-39.html"><span class="cl-num">39</span><span class="cl-main"><b>Escape Characters and Heredoc</b><em>\n, \t, \$, and the three quoting styles.</em></span><span class="cl-meta"><span class="cl-time">6 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="3" data-pro="0" data-search="formatting output with printf format specifiers, padding, and building tables in plain text. arrays &amp; strings"><a href="lessons/lesson-40.html"><span class="cl-num">40</span><span class="cl-main"><b>Formatting Output with printf</b><em>Format specifiers, padding, and building tables in plain text.</em></span><span class="cl-meta"><span class="cl-time">6 min</span><span class="badge badge-free">Free</span></span></a></li>
+      </ul>
+    </details>
+
+    <details class="cl-group" data-lv="4" open>
+      <summary>
+        <span class="cl-lv">04</span>
+        <span class="cl-title"><b>Functions &amp; Reuse</b><em>User-defined functions with typed parameters and return values, callbacks, include vs require, dates, JSON and regular expressions.</em></span>
+        <span class="cl-count">8 lessons</span>
+        <span class="cl-chev" aria-hidden="true">&#9662;</span>
+      </summary>
+      <ul class="cl-list">
+        <li class="cl-row" data-lv="4" data-pro="0" data-search="user-defined functions declaring, calling, and the single-responsibility rule. functions &amp; reuse"><a href="lessons/lesson-41.html"><span class="cl-num">41</span><span class="cl-main"><b>User-Defined Functions</b><em>Declaring, calling, and the single-responsibility rule.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="4" data-pro="0" data-search="typed parameters and return types scalar types, union types, nullable and never. functions &amp; reuse"><a href="lessons/lesson-42.html"><span class="cl-num">42</span><span class="cl-main"><b>Typed Parameters and Return Types</b><em>Scalar types, union types, nullable and never.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="4" data-pro="0" data-search="default, named and variadic arguments optional parameters, argument unpacking, and php 8 named arguments. functions &amp; reuse"><a href="lessons/lesson-43.html"><span class="cl-num">43</span><span class="cl-main"><b>Default, Named and Variadic Arguments</b><em>Optional parameters, argument unpacking, and PHP 8 named arguments.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="4" data-pro="0" data-search="callback and arrow functions closures, use(), and the one-line fn() syntax. functions &amp; reuse"><a href="lessons/lesson-44.html"><span class="cl-num">44</span><span class="cl-main"><b>Callback and Arrow Functions</b><em>Closures, use(), and the one-line fn() syntax.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="4" data-pro="0" data-search="include, require and autoloading the four include forms, and why require_once is not a design. functions &amp; reuse"><a href="lessons/lesson-45.html"><span class="cl-num">45</span><span class="cl-main"><b>include, require and Autoloading</b><em>The four include forms, and why require_once is not a design.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="4" data-pro="0" data-search="dates and times datetimeimmutable, timezones, and formatting for humans. functions &amp; reuse"><a href="lessons/lesson-46.html"><span class="cl-num">46</span><span class="cl-main"><b>Dates and Times</b><em>DateTimeImmutable, timezones, and formatting for humans.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="4" data-pro="0" data-search="json encode and decode associative vs object decoding, and the flags that matter. functions &amp; reuse"><a href="lessons/lesson-47.html"><span class="cl-num">47</span><span class="cl-main"><b>JSON Encode and Decode</b><em>Associative vs object decoding, and the flags that matter.</em></span><span class="cl-meta"><span class="cl-time">6 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="4" data-pro="0" data-search="regular expressions pcre basics, delimiters, and the catastrophic backtracking trap. functions &amp; reuse"><a href="lessons/lesson-48.html"><span class="cl-num">48</span><span class="cl-main"><b>Regular Expressions</b><em>PCRE basics, delimiters, and the catastrophic backtracking trap.</em></span><span class="cl-meta"><span class="cl-time">9 min</span><span class="badge badge-free">Free</span></span></a></li>
+      </ul>
+    </details>
+
+    <details class="cl-group" data-lv="5" open>
+      <summary>
+        <span class="cl-lv">05</span>
+        <span class="cl-title"><b>Forms, State &amp; Files</b><em>Collect input safely, keep users logged in, and handle uploads without opening a hole. This is the level where a beginner app becomes a real one.</em></span>
+        <span class="cl-count">12 lessons</span>
+        <span class="cl-chev" aria-hidden="true">&#9662;</span>
+      </summary>
+      <ul class="cl-list">
+        <li class="cl-row" data-lv="5" data-pro="0" data-search="handling form submissions the post/redirect/get pattern and why a refresh must not resubmit. forms, state &amp; files"><a href="lessons/lesson-49.html"><span class="cl-num">49</span><span class="cl-main"><b>Handling Form Submissions</b><em>The POST/redirect/GET pattern and why a refresh must not resubmit.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="5" data-pro="0" data-search="validating input required fields, formats, and collecting every error at once. forms, state &amp; files"><a href="lessons/lesson-50.html"><span class="cl-num">50</span><span class="cl-main"><b>Validating Input</b><em>Required fields, formats, and collecting every error at once.</em></span><span class="cl-meta"><span class="cl-time">9 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="5" data-pro="0" data-search="required fields and error messages field-level errors, repopulation, and accessible markup. forms, state &amp; files"><a href="lessons/lesson-51.html"><span class="cl-num">51</span><span class="cl-main"><b>Required Fields and Error Messages</b><em>Field-level errors, repopulation, and accessible markup.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="5" data-pro="0" data-search="url and email validation filter_var, idn domains, and why regex emails fail. forms, state &amp; files"><a href="lessons/lesson-52.html"><span class="cl-num">52</span><span class="cl-main"><b>URL and Email Validation</b><em>filter_var, IDN domains, and why regex emails fail.</em></span><span class="cl-meta"><span class="cl-time">6 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="5" data-pro="0" data-search="superglobals $_get, $_post, $_server, $_files, $_session and $_cookie. forms, state &amp; files"><a href="lessons/lesson-53.html"><span class="cl-num">53</span><span class="cl-main"><b>Superglobals</b><em>$_GET, $_POST, $_SERVER, $_FILES, $_SESSION and $_COOKIE.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="5" data-pro="0" data-search="$_get and query strings reading parameters, arrays in the query string, and canonical urls. forms, state &amp; files"><a href="lessons/lesson-54.html"><span class="cl-num">54</span><span class="cl-main"><b>$_GET and Query Strings</b><em>Reading parameters, arrays in the query string, and canonical URLs.</em></span><span class="cl-meta"><span class="cl-time">6 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="5" data-pro="0" data-search="cookies setting, reading and the flags that keep a cookie out of the wrong hands. forms, state &amp; files"><a href="lessons/lesson-55.html"><span class="cl-num">55</span><span class="cl-main"><b>Cookies</b><em>Setting, reading and the flags that keep a cookie out of the wrong hands.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="5" data-pro="0" data-search="sessions session_start, fixation, and what belongs in a session. forms, state &amp; files"><a href="lessons/lesson-56.html"><span class="cl-num">56</span><span class="cl-main"><b>Sessions</b><em>session_start, fixation, and what belongs in a session.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="5" data-pro="0" data-search="filters and sanitisation filter_input, filter_var_array, and validate vs sanitise. forms, state &amp; files"><a href="lessons/lesson-57.html"><span class="cl-num">57</span><span class="cl-main"><b>Filters and Sanitisation</b><em>filter_input, filter_var_array, and validate vs sanitise.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="5" data-pro="0" data-search="file uploads $_files, mime checks, and storing outside the web root. forms, state &amp; files"><a href="lessons/lesson-58.html"><span class="cl-num">58</span><span class="cl-main"><b>File Uploads</b><em>$_FILES, MIME checks, and storing outside the web root.</em></span><span class="cl-meta"><span class="cl-time">9 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="5" data-pro="0" data-search="reading and writing files file_get_contents, fopen modes, and the locking question. forms, state &amp; files"><a href="lessons/lesson-59.html"><span class="cl-num">59</span><span class="cl-main"><b>Reading and Writing Files</b><em>file_get_contents, fopen modes, and the locking question.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="5" data-pro="0" data-search="path safety and directory traversal basename, realpath, and the ../ attack. forms, state &amp; files"><a href="lessons/lesson-60.html"><span class="cl-num">60</span><span class="cl-main"><b>Path Safety and Directory Traversal</b><em>basename, realpath, and the ../ attack.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+      </ul>
+    </details>
+
+    <details class="cl-group" data-lv="6" open>
+      <summary>
+        <span class="cl-lv">06</span>
+        <span class="cl-title"><b>Object-Oriented PHP</b><em>Classes, constructors, access modifiers, inheritance, interfaces, traits and namespaces - the vocabulary every framework expects you to already have.</em></span>
+        <span class="cl-count">14 lessons</span>
+        <span class="cl-chev" aria-hidden="true">&#9662;</span>
+      </summary>
+      <ul class="cl-list">
+        <li class="cl-row" data-lv="6" data-pro="0" data-search="classes and objects properties, methods, and the difference between a class and an instance. object-oriented php"><a href="lessons/lesson-61.html"><span class="cl-num">61</span><span class="cl-main"><b>Classes and Objects</b><em>Properties, methods, and the difference between a class and an instance.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="6" data-pro="0" data-search="constructors and property promotion __construct, promotion, and validating in one place. object-oriented php"><a href="lessons/lesson-62.html"><span class="cl-num">62</span><span class="cl-main"><b>Constructors and Property Promotion</b><em>__construct, promotion, and validating in one place.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="6" data-pro="0" data-search="destructors __destruct, and why you should not rely on it. object-oriented php"><a href="lessons/lesson-63.html"><span class="cl-num">63</span><span class="cl-main"><b>Destructors</b><em>__destruct, and why you should not rely on it.</em></span><span class="cl-meta"><span class="cl-time">5 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="6" data-pro="0" data-search="access modifiers public, protected, private and the readonly modifier. object-oriented php"><a href="lessons/lesson-64.html"><span class="cl-num">64</span><span class="cl-main"><b>Access Modifiers</b><em>public, protected, private and the readonly modifier.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="6" data-pro="0" data-search="inheritance extends, parent::, and when composition is the better answer. object-oriented php"><a href="lessons/lesson-65.html"><span class="cl-num">65</span><span class="cl-main"><b>Inheritance</b><em>extends, parent::, and when composition is the better answer.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="6" data-pro="0" data-search="abstract classes shared implementation with a contract subclasses must fulfil. object-oriented php"><a href="lessons/lesson-66.html"><span class="cl-num">66</span><span class="cl-main"><b>Abstract Classes</b><em>Shared implementation with a contract subclasses must fulfil.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="6" data-pro="0" data-search="interfaces contracts without implementation, and multiple inheritance of type. object-oriented php"><a href="lessons/lesson-67.html"><span class="cl-num">67</span><span class="cl-main"><b>Interfaces</b><em>Contracts without implementation, and multiple inheritance of type.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="6" data-pro="0" data-search="traits horizontal reuse, conflict resolution, and the trait smell. object-oriented php"><a href="lessons/lesson-68.html"><span class="cl-num">68</span><span class="cl-main"><b>Traits</b><em>Horizontal reuse, conflict resolution, and the trait smell.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="6" data-pro="0" data-search="static methods and properties class-level state, and why static is hard to test. object-oriented php"><a href="lessons/lesson-69.html"><span class="cl-num">69</span><span class="cl-main"><b>Static Methods and Properties</b><em>Class-level state, and why static is hard to test.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="6" data-pro="0" data-search="namespaces and autoloading psr-4, use statements, and resolving class names. object-oriented php"><a href="lessons/lesson-70.html"><span class="cl-num">70</span><span class="cl-main"><b>Namespaces and Autoloading</b><em>PSR-4, use statements, and resolving class names.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="6" data-pro="0" data-search="iterables and generators iterator, traversable, and yielding instead of building an array. object-oriented php"><a href="lessons/lesson-71.html"><span class="cl-num">71</span><span class="cl-main"><b>Iterables and Generators</b><em>Iterator, Traversable, and yielding instead of building an array.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="6" data-pro="0" data-search="enums backed enums, cases, and replacing magic strings. object-oriented php"><a href="lessons/lesson-72.html"><span class="cl-num">72</span><span class="cl-main"><b>Enums</b><em>Backed enums, cases, and replacing magic strings.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="6" data-pro="0" data-search="exceptions in oop custom exception classes and catching by type. object-oriented php"><a href="lessons/lesson-73.html"><span class="cl-num">73</span><span class="cl-main"><b>Exceptions in OOP</b><em>Custom exception classes and catching by type.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="6" data-pro="0" data-search="composition and dependency injection constructor injection, and why new inside a class hurts. object-oriented php"><a href="lessons/lesson-74.html"><span class="cl-num">74</span><span class="cl-main"><b>Composition and Dependency Injection</b><em>Constructor injection, and why new inside a class hurts.</em></span><span class="cl-meta"><span class="cl-time">9 min</span><span class="badge badge-free">Free</span></span></a></li>
+      </ul>
+    </details>
+
+    <details class="cl-group" data-lv="7" open>
+      <summary>
+        <span class="cl-lv">07</span>
+        <span class="cl-title"><b>MySQL &amp; PDO</b><em>Connect, model, query and mutate. Every query in this level is written with prepared statements from the first line - never string concatenation.</em></span>
+        <span class="cl-count">14 lessons</span>
+        <span class="cl-chev" aria-hidden="true">&#9662;</span>
+      </summary>
+      <ul class="cl-list">
+        <li class="cl-row" data-lv="7" data-pro="0" data-search="connecting with pdo dsn, options, and the three settings you must not skip. mysql &amp; pdo"><a href="lessons/lesson-75.html"><span class="cl-num">75</span><span class="cl-main"><b>Connecting with PDO</b><em>DSN, options, and the three settings you must not skip.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="7" data-pro="0" data-search="creating a database and tables ddl, column types, and the constraints that prevent bad data. mysql &amp; pdo"><a href="lessons/lesson-76.html"><span class="cl-num">76</span><span class="cl-main"><b>Creating a Database and Tables</b><em>DDL, column types, and the constraints that prevent bad data.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="7" data-pro="0" data-search="inserting rows prepared inserts, lastinsertid, and batch inserts. mysql &amp; pdo"><a href="lessons/lesson-77.html"><span class="cl-num">77</span><span class="cl-main"><b>Inserting Rows</b><em>Prepared inserts, lastInsertId, and batch inserts.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="7" data-pro="0" data-search="prepared statements named and positional placeholders, and what cannot be bound. mysql &amp; pdo"><a href="lessons/lesson-78.html"><span class="cl-num">78</span><span class="cl-main"><b>Prepared Statements</b><em>Named and positional placeholders, and what cannot be bound.</em></span><span class="cl-meta"><span class="cl-time">9 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="7" data-pro="0" data-search="selecting and filtering fetch, fetchall, fetchcolumn and the memory difference. mysql &amp; pdo"><a href="lessons/lesson-79.html"><span class="cl-num">79</span><span class="cl-main"><b>Selecting and Filtering</b><em>fetch, fetchAll, fetchColumn and the memory difference.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="7" data-pro="0" data-search="where, order by and limit parameterised filters, sorting, and pagination that scales. mysql &amp; pdo"><a href="lessons/lesson-80.html"><span class="cl-num">80</span><span class="cl-main"><b>WHERE, ORDER BY and LIMIT</b><em>Parameterised filters, sorting, and pagination that scales.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="7" data-pro="0" data-search="updating and deleting affected rows, soft deletes, and the missing where clause. mysql &amp; pdo"><a href="lessons/lesson-81.html"><span class="cl-num">81</span><span class="cl-main"><b>Updating and Deleting</b><em>Affected rows, soft deletes, and the missing WHERE clause.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="7" data-pro="0" data-search="transactions begintransaction, commit, rollback and the try/catch shape. mysql &amp; pdo"><a href="lessons/lesson-82.html"><span class="cl-num">82</span><span class="cl-main"><b>Transactions</b><em>beginTransaction, commit, rollback and the try/catch shape.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="7" data-pro="0" data-search="joins and relationships inner vs left join, and the n+1 query problem. mysql &amp; pdo"><a href="lessons/lesson-83.html"><span class="cl-num">83</span><span class="cl-main"><b>Joins and Relationships</b><em>INNER vs LEFT JOIN, and the N+1 query problem.</em></span><span class="cl-meta"><span class="cl-time">9 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="7" data-pro="0" data-search="indexes and query performance explain, composite index order, and the leading-wildcard trap. mysql &amp; pdo"><a href="lessons/lesson-84.html"><span class="cl-num">84</span><span class="cl-main"><b>Indexes and Query Performance</b><em>EXPLAIN, composite index order, and the leading-wildcard trap.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="7" data-pro="0" data-search="migrations and schema changes versioned, reversible, and safe to run on a live table. mysql &amp; pdo"><a href="lessons/lesson-85.html"><span class="cl-num">85</span><span class="cl-main"><b>Migrations and Schema Changes</b><em>Versioned, reversible, and safe to run on a live table.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="7" data-pro="0" data-search="connection management and pooling one connection per request, and why persistent connections bite. mysql &amp; pdo"><a href="lessons/lesson-86.html"><span class="cl-num">86</span><span class="cl-main"><b>Connection Management and Pooling</b><em>One connection per request, and why persistent connections bite.</em></span><span class="cl-meta"><span class="cl-time">7 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="7" data-pro="0" data-search="xml and simplexml parsing untrusted xml, and the entity-expansion attack. mysql &amp; pdo"><a href="lessons/lesson-87.html"><span class="cl-num">87</span><span class="cl-main"><b>XML and SimpleXML</b><em>Parsing untrusted XML, and the entity-expansion attack.</em></span><span class="cl-meta"><span class="cl-time">6 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="7" data-pro="0" data-search="ajax and json endpoints a small json api, status codes, and csrf on state changes. mysql &amp; pdo"><a href="lessons/lesson-88.html"><span class="cl-num">88</span><span class="cl-main"><b>AJAX and JSON Endpoints</b><em>A small JSON API, status codes, and CSRF on state changes.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+      </ul>
+    </details>
+
+    <details class="cl-group" data-lv="8" open>
+      <summary>
+        <span class="cl-lv">08</span>
+        <span class="cl-title"><b>Security &amp; Production</b><em>The level that separates a tutorial project from something you can put on the internet: XSS, CSRF, password hashing, session hardening, error handling and deployment.</em></span>
+        <span class="cl-count">8 lessons</span>
+        <span class="cl-chev" aria-hidden="true">&#9662;</span>
+      </summary>
+      <ul class="cl-list">
+        <li class="cl-row" data-lv="8" data-pro="0" data-search="cross-site scripting and escaping htmlspecialchars on output, and the contexts that need more. security &amp; production"><a href="lessons/lesson-89.html"><span class="cl-num">89</span><span class="cl-main"><b>Cross-Site Scripting and Escaping</b><em>htmlspecialchars on output, and the contexts that need more.</em></span><span class="cl-meta"><span class="cl-time">9 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="8" data-pro="0" data-search="csrf protection synchroniser tokens, samesite, and why get must not mutate. security &amp; production"><a href="lessons/lesson-90.html"><span class="cl-num">90</span><span class="cl-main"><b>CSRF Protection</b><em>Synchroniser tokens, SameSite, and why GET must not mutate.</em></span><span class="cl-meta"><span class="cl-time">9 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="8" data-pro="0" data-search="password hashing password_hash, password_verify, and rehashing on login. security &amp; production"><a href="lessons/lesson-91.html"><span class="cl-num">91</span><span class="cl-main"><b>Password Hashing</b><em>password_hash, password_verify, and rehashing on login.</em></span><span class="cl-meta"><span class="cl-time">9 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="8" data-pro="0" data-search="session hardening cookie flags, regeneration, timeouts and storage. security &amp; production"><a href="lessons/lesson-92.html"><span class="cl-num">92</span><span class="cl-main"><b>Session Hardening</b><em>Cookie flags, regeneration, timeouts and storage.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="8" data-pro="0" data-search="upload safety and file permissions executable uploads, chmod, and serving files through php. security &amp; production"><a href="lessons/lesson-93.html"><span class="cl-num">93</span><span class="cl-main"><b>Upload Safety and File Permissions</b><em>Executable uploads, chmod, and serving files through PHP.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="8" data-pro="0" data-search="exceptions and error handling set_exception_handler, error_reporting, and never showing traces. security &amp; production"><a href="lessons/lesson-94.html"><span class="cl-num">94</span><span class="cl-main"><b>Exceptions and Error Handling</b><em>set_exception_handler, error_reporting, and never showing traces.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="8" data-pro="0" data-search="configuration and secrets environment variables, .env files, and what never goes in git. security &amp; production"><a href="lessons/lesson-95.html"><span class="cl-num">95</span><span class="cl-main"><b>Configuration and Secrets</b><em>Environment variables, .env files, and what never goes in git.</em></span><span class="cl-meta"><span class="cl-time">8 min</span><span class="badge badge-free">Free</span></span></a></li>
+        <li class="cl-row" data-lv="8" data-pro="0" data-search="deployment and production checklist the last mile: opcache, https, backups, and a rollback plan. security &amp; production"><a href="lessons/lesson-96.html"><span class="cl-num">96</span><span class="cl-main"><b>Deployment and Production Checklist</b><em>The last mile: opcache, HTTPS, backups, and a rollback plan.</em></span><span class="cl-meta"><span class="cl-time">9 min</span><span class="badge badge-free">Free</span></span></a></li>
+      </ul>
+    </details>
+    </div>
+
+    <p class="cl-empty" id="clEmpty" hidden>No lesson matches that search. Try a broader term, or clear the filters.</p>
+  </div>
+</section>
+
+<!-- ============ AD SLOT (leaderboard) ============ -->
+<!--
+  NETWORK: Carbon Ads — https://www.carbonads.net/
+  Best fit for a dev-education site: one tasteful native unit, no remarketing,
+  no layout shift, accepted by ad blockers more often than display networks.
+  Apply at https://www.carbonads.net/ (approval is manual, ~1 week).
+  TODO: replace YOUR_CARBON_ZONE_ID and YOUR_CARBON_SERVE_ID below. Both come
+        from the snippet Carbon gives you after approval.
+-->
+<div class="wrap" style="padding-bottom:20px">
+  <div class="adslot ad-leader" id="ad-leaderboard" data-ad-network="carbon">
+    <div>
+      <div class="ad-label">Advertisement</div>
+      <!-- Carbon Ads placement. Falls back to the reserved-slot panel if the
+           script is blocked, so the page never shows a blank box. -->
+      <div id="carbonads">
+        <script async type="text/javascript"
+          src="//cdn.carbonads.com/carbon.js?serve=YOUR_CARBON_SERVE_ID&placement=YOUR_CARBON_ZONE_ID"
+          id="_carbonads_js"></script>
+      </div>
+      <div class="ad-size">970 × 90 · leaderboard</div>
+      <p class="ad-note">
+        Reserved slot — Carbon Ads serves here once approved.
+        <span style="color:var(--muted-2)">TODO: insert your Carbon zone + serve IDs.</span>
+        Ads are labelled and never styled to look like course content.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ LESSON PREVIEWS ============ -->
+<section class="section lessons" id="lessons">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Sample lessons</p>
+      <h2>Real code, not pseudocode.</h2>
+      <p>Three lessons pulled straight from the path. Every snippet is runnable, typed, and written the way you would ship it.</p>
+    </div>
+
+    <div class="lesson-grid">
+
+      <article class="lesson reveal">
+        <div class="lesson-top">
+          <p class="eyebrow">Level 1 · Lesson 5</p>
+          <h3>Variables &amp; string interpolation</h3>
+          <p>Why double quotes and single quotes behave differently, and how to format output without concatenation noise.</p>
+        </div>
+<pre><code><span class="c-tag">&lt;?php</span>
+<span class="c-key">declare</span>(strict_types=<span class="c-num">1</span>);
+
+<span class="c-var">$name</span>  = <span class="c-str">"Ada"</span>;
+<span class="c-var">$price</span> = <span class="c-num">49.5</span>;
+<span class="c-var">$qty</span>   = <span class="c-num">3</span>;
+
+<span class="c-com">// Double quotes interpolate variables.</span>
+<span class="c-com">// Single quotes stay literal.</span>
+<span class="c-var">$total</span> = <span class="c-var">$price</span> * <span class="c-var">$qty</span>;
+
+<span class="c-fn">printf</span>(
+    <span class="c-str">'%s ordered %d licences — total $%.2f'</span> . <span class="c-str">"\n"</span>,
+    <span class="c-var">$name</span>, <span class="c-var">$qty</span>, <span class="c-var">$total</span>
+);
+<span class="c-com">// Ada ordered 3 licences — total $148.50</span></code></pre>
+        <div class="lesson-foot">
+          <span>6 min · free</span>
+          <a href="lessons/lesson-05.html">Open lesson →</a>
+        </div>
+      </article>
+
+      <article class="lesson reveal">
+        <div class="lesson-top">
+          <p class="eyebrow">Level 5 · Lesson 2</p>
+          <h3>Validating a form the safe way</h3>
+          <p>Never trust <code>$_POST</code>. Validate, collect every error, and only redirect once the input is clean.</p>
+        </div>
+<pre><code><span class="c-tag">&lt;?php</span>
+<span class="c-key">declare</span>(strict_types=<span class="c-num">1</span>);
+
+<span class="c-var">$errors</span> = [];
+<span class="c-var">$email</span>  = <span class="c-str">''</span>;
+
+<span class="c-key">if</span> (<span class="c-var">$_SERVER</span>[<span class="c-str">'REQUEST_METHOD'</span>] === <span class="c-str">'POST'</span>) {
+    <span class="c-var">$email</span> = <span class="c-fn">trim</span>(<span class="c-var">$_POST</span>[<span class="c-str">'email'</span>] ?? <span class="c-str">''</span>);
+
+    <span class="c-key">if</span> (<span class="c-var">$email</span> === <span class="c-str">''</span>) {
+        <span class="c-var">$errors</span>[] = <span class="c-str">'Email is required.'</span>;
+    } <span class="c-key">elseif</span> (!<span class="c-fn">filter_var</span>(
+        <span class="c-var">$email</span>, FILTER_VALIDATE_EMAIL
+    )) {
+        <span class="c-var">$errors</span>[] = <span class="c-str">'Not a valid email.'</span>;
+    }
+
+    <span class="c-key">if</span> (!<span class="c-var">$errors</span>) {
+        <span class="c-fn">header</span>(<span class="c-str">'Location: /thanks.php'</span>, <span class="c-key">true</span>, <span class="c-num">303</span>);
+        <span class="c-key">exit</span>;
+    }
+}</code></pre>
+        <div class="lesson-foot">
+          <span>11 min · Pro</span>
+          <a href="lessons/lesson-50.html">Open lesson →</a>
+        </div>
+      </article>
+
+      <article class="lesson reveal">
+        <div class="lesson-top">
+          <p class="eyebrow">Level 7 · Lesson 8</p>
+          <h3>PDO prepared statements</h3>
+          <p>The single most important habit in PHP. Bind every value, disable emulation, and let the driver escape for you.</p>
+        </div>
+<pre><code><span class="c-tag">&lt;?php</span>
+<span class="c-key">declare</span>(strict_types=<span class="c-num">1</span>);
+
+<span class="c-var">$pdo</span> = <span class="c-key">new</span> <span class="c-fn">PDO</span>(
+    <span class="c-str">'mysql:host=localhost;dbname=shop;charset=utf8mb4'</span>,
+    <span class="c-fn">getenv</span>(<span class="c-str">'DB_USER'</span>),
+    <span class="c-fn">getenv</span>(<span class="c-str">'DB_PASS'</span>),
+    [
+        PDO::ATTR_ERRMODE          =&gt; PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE =&gt; PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES =&gt; <span class="c-key">false</span>,
+    ]
+);
+
+<span class="c-var">$stmt</span> = <span class="c-var">$pdo</span>-&gt;<span class="c-fn">prepare</span>(
+    <span class="c-str">'SELECT id, name, price FROM products
+     WHERE category = :cat ORDER BY price LIMIT :limit'</span>
+);
+<span class="c-var">$stmt</span>-&gt;<span class="c-fn">bindValue</span>(<span class="c-str">':cat'</span>, <span class="c-var">$_GET</span>[<span class="c-str">'category'</span>] ?? <span class="c-str">'books'</span>);
+<span class="c-var">$stmt</span>-&gt;<span class="c-fn">bindValue</span>(<span class="c-str">':limit'</span>, <span class="c-num">20</span>, PDO::PARAM_INT);
+<span class="c-var">$stmt</span>-&gt;<span class="c-fn">execute</span>();
+
+<span class="c-key">foreach</span> (<span class="c-var">$stmt</span> <span class="c-key">as</span> <span class="c-var">$row</span>) {
+    <span class="c-fn">echo</span> <span class="c-fn">htmlspecialchars</span>(<span class="c-var">$row</span>[<span class="c-str">'name'</span>]), <span class="c-str">"\n"</span>;
+}</code></pre>
+        <div class="lesson-foot">
+          <span>14 min · Pro</span>
+          <a href="lessons/lesson-82.html">Open lesson →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUPPORT THIS SITE ============ -->
+<section class="section" id="support">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Support</p>
+      <h2>Everything here is free. If it helped, you can chip in.</h2>
+      <p>
+        All 96 lessons, all four project briefs and every code sample are open to everyone &mdash;
+        no account, no card, no paywall. There is no paid tier to upgrade to. If you want to keep
+        the site online, a voluntary donation is the only thing we ask for.
+      </p>
+    </div>
+
+    <div class="support-grid">
+      <div class="reveal">
+        <div data-donation="block"></div>
+      </div>
+
+      <aside class="support-side reveal">
+        <h3>What your donation pays for</h3>
+        <ul class="support-list">
+          <li><b>Hosting &amp; bandwidth</b><span>Static hosting, CDN and the domain renewal.</span></li>
+          <li><b>New lessons</b><span>Time to write and test the material, not just publish it.</span></li>
+          <li><b>Keeping it free</b><span>No ads on lesson pages, no email gate, no upsell wall.</span></li>
+        </ul>
+        <p class="support-note">
+          Donations are optional and one-off. There is no subscription, nothing recurring,
+          and no account is created. The site stays free either way.
+        </p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AFFILIATE / RECOMMENDED ============ -->
+<!--
+  AFFILIATE PROGRAMMES — all three accept a PHP/dev-education site.
+  Every link needs rel="sponsored noopener" and the disclosure below must stay
+  visible above the fold of this section (FTC 16 CFR Part 255).
+
+  1. DigitalOcean Affiliate  — sign up: https://www.digitalocean.com/affiliates
+     Pays ~$25-200 per qualifying referral, 90-day cookie.
+  2. Amazon Associates       — sign up: https://affiliate-program.amazon.com/
+     Books (PHP/MySQL titles) convert well on lesson pages. 24h cookie;
+     commission tiers changed in 2024 — check the current rate card.
+  3. Udemy Affiliate         — sign up: https://www.udemy.com/affiliate/
+     Useful as a "go deeper" upsell under Level 8 material.
+-->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-bottom:32px">
+      <p class="eyebrow">Recommended tools</p>
+      <h2 style="font-size:1.5rem">What we actually use</h2>
+    </div>
+    <div class="affiliate">
+      <article class="aff reveal">
+        <span class="aff-tag">Affiliate</span>
+        <h4>Managed PHP hosting</h4>
+        <p>Push-to-deploy PHP with staging environments and free SSL. What we use for every project build in the course.</p>
+        <!-- TODO: insert your DigitalOcean refcode -->
+        <a href="https://www.digitalocean.com/?refcode=REPLACE_WITH_YOUR_REFCODE"
+           rel="sponsored noopener" target="_blank">See plans →</a>
+      </article>
+      <article class="aff reveal">
+        <span class="aff-tag">Affiliate</span>
+        <h4>Modern PHP books</h4>
+        <p>The dead-tree companions to this path — Modern PHP, PHP Objects Patterns and Practice, and a MySQL reference you will actually open.</p>
+        <!-- TODO: insert your Amazon Associates tag -->
+        <a href="https://www.amazon.com/s?k=modern+php&amp;tag=REPLACE_WITH_YOUR_ASSOCIATE_TAG"
+           rel="sponsored noopener" target="_blank">Browse the shelf →</a>
+      </article>
+      <article class="aff reveal">
+        <span class="aff-tag">Affiliate</span>
+        <h4>Udemy video courses</h4>
+        <p>Prefer video to reading? These pair well with Levels 5&ndash;7 when you want a second explanation of OOP and PDO.</p>
+        <!-- TODO: insert your Udemy affiliate ID -->
+        <a href="https://www.udemy.com/topic/php/?ref=REPLACE_WITH_YOUR_UDEMY_AFFILIATE_ID"
+           rel="sponsored noopener" target="_blank">Explore courses →</a>
+      </article>
+    </div>
+    <p class="aff-disclosure">
+      <strong>Affiliate disclosure:</strong> this page contains affiliate links. If you buy through one,
+      we may earn a commission at no extra cost to you. We only link to tools used in the course
+      material, and none of these links affect which lessons are free. See our
+      <a href="legal.html#affiliates">full disclosure policy</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ============ AD SLOT (rectangle) ============ -->
+<!--
+  NETWORK: EthicalAds — https://www.ethicalads.io/
+  Privacy-first, no cookies, developer-audience network run by Read the Docs.
+  Pays CPM on developer traffic and explicitly welcomes programming sites.
+  Apply at https://www.ethicalads.io/advertisers/ (publishers: "Become a publisher").
+  TODO: replace YOUR_ETHICALADS_PUBLISHER_ID and YOUR_ETHICALADS_AD_TYPE.
+-->
+<div class="wrap" style="padding-bottom:20px">
+  <div class="adslot ad-rect" id="ad-rectangle" data-ad-network="ethicalads">
+    <div>
+      <div class="ad-label">Advertisement</div>
+      <div
+        data-ea-publisher="YOUR_ETHICALADS_PUBLISHER_ID"
+        data-ea-type="image"
+        data-ea-style="fixedfooter"
+        class="dark"></div>
+      <div class="ad-size">300 × 250 · medium rectangle</div>
+      <p class="ad-note">
+        EthicalAds in-article slot. No cookies, no cross-site tracking.
+        <span style="color:var(--muted-2)">TODO: insert your publisher ID.</span>
+      </p>
+    </div>
+  </div>
+</div>
+<!-- EthicalAds loader — one per page, after all placements. -->
+<script async src="https://media.ethicalads.io/media/client/ethicalads.min.js"></script>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section" id="reviews">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Reviews</p>
+      <h2>What learners say after Level 8.</h2>
+    </div>
+    <div class="quotes">
+      <article class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>I had written PHP for two years and still concatenated variables into SQL. Level 7 rewired that in an afternoon. The prepared-statement lesson alone was worth the subscription.</p>
+        <div class="who">
+          <span class="avatar" style="background:var(--php)">MR</span>
+          <div><b>Mara R.</b><span>Backend developer, Lisbon</span></div>
+        </div>
+      </article>
+      <article class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>The ordering is the thing. Every other course teaches OOP before you have a reason to care. Here you hit classes only after you have written the same array-handling code five times.</p>
+        <div class="who">
+          <span class="avatar" style="background:var(--mint)">DK</span>
+          <div><b>Daniel K.</b><span>Career switcher, Toronto</span></div>
+        </div>
+      </article>
+      <article class="quote reveal">
+        <div class="stars">★★★★☆</div>
+        <p>We onboarded three juniors with the Team plan. The shared progress dashboard meant I could see exactly who was stuck on sessions before it became a production bug.</p>
+        <div class="who">
+          <span class="avatar" style="background:var(--amber)">SA</span>
+          <div><b>Sofia A.</b><span>Engineering lead, Berlin</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">FAQ</p>
+      <h2>Questions before you start.</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>Do I need to know HTML and CSS first?</summary>
+        <div class="answer">Yes, at a basic level. PHP runs on the server and returns HTML to the browser, so you should be comfortable with HTML elements, forms and a little CSS before starting Level 1. JavaScript helps from Level 5 onward, when you start handling form submissions and AJAX.</div>
+      </details>
+      <details>
+        <summary>Which PHP version does the course use?</summary>
+        <div class="answer">All code targets PHP 8.1 or newer and uses <code>declare(strict_types=1)</code>. That means union types, named arguments, <code>match</code> expressions, the nullsafe operator and constructor property promotion are available throughout — and nothing in the course relies on removed PHP 5 or 7 behaviour.</div>
+      </details>
+      <details>
+        <summary>Is everything really free?</summary>
+        <div class="answer">Yes &mdash; all 96 lessons, all four project briefs, every code sample and the newsletter. There is no paid tier, no locked lesson and no account required. Progress tracking is stored in your own browser. The site is funded by voluntary donations, so nothing is gated behind a payment.</div>
+      </details>
+      <details>
+        <summary>Do I have to pay or donate anything?</summary>
+        <div class="answer">No. Donations are entirely voluntary and one-off, and the site stays free whether you give or not. There is no subscription to cancel because there is no subscription.</div>
+      </details>
+      <details>
+        <summary>Do I get a certificate?</summary>
+        <div class="answer">There is a printable completion certificate you can generate once you have marked the lessons complete. It is free and needs no account. It is a record of your own progress, not an accredited qualification.</div>
+      </details>
+      <details>
+        <summary>How much time should I budget each week?</summary>
+        <div class="answer">Most learners finish in ten to twelve weeks at four to six hours per week. The path is sequential, so you can move faster through Levels 1 and 2 if you already write code in another language.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ 
+<section class="section" id="newsletter" style="padding-top:0">
+  <div class="wrap">
+    <div class="newsletter reveal">
+      <div>
+        <p class="eyebrow">Free · every Tuesday</p>
+        <h2>One PHP lesson in your inbox each week.</h2>
+        <p>A single concept, a runnable snippet and one production gotcha. No fluff, no upsell spam — unsubscribe in one click.</p>
+      </div>
+      <div>
+        <form class="nl-form" id="nlForm" novalidate>
+          <input type="email" id="nlEmail" name="email" placeholder="you@company.com" aria-label="Email address" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p class="nl-note">Join 12,400+ PHP developers. No spam, ever.</p>
+        <p class="nl-ok" id="nlOk">✓ You're on the list — check your inbox to confirm.</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="logo">
+          <span class="logo-mark">&lt;?</span>
+          Learn<span style="color:var(--php)">PHP</span>
+        </a>
+        <p>Structured PHP training for developers who want to ship a backend, not just print a string.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Learn</h4>
+        <a href="#path">Curriculum</a>
+        <a href="#curriculum">All 96 lessons</a>
+        <a href="#support">Support</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#reviews">Reviews</a>
+        <!--<a href="#newsletter">Newsletter</a>-->
+        <a href="#curriculum">All lessons</a>
+        <a href="#support">Donate</a>
+      </div>
+      <div class="foot-col">
+        <h4>Legal</h4>
+        <a href="legal.html#terms">Terms of service</a>
+        <a href="legal.html#privacy">Privacy policy</a>
+        <a href="legal.html#cookies">Cookie policy</a>
+        <a href="legal.html#affiliates">Affiliate disclosure</a>
+        <a href="legal.html#advertising">Advertising disclosure</a>
+        <a href="mailto:hello@learnphp.example">Contact</a>
+      </div>
+    </div>
+
+    <!--<div class="placeholder-note">
+      <b>Demo build — placeholders in use.</b> The Maya number and payment link are empty until the owner
+      fills in <code>assets/donation-config.js</code>, so the donation block shows a “coming soon” state.
+      The 12,400 subscriber count, the testimonial names and the affiliate partners are illustrative and must
+      be replaced with real data before launch. The curriculum topics, lesson counts and code samples are grounded in the
+      public W3Schools PHP tutorial; the lesson prose, examples and exercises are written for this
+      demo and are illustrative teaching material, not official W3Schools content. Newsletter and checkout forms are front-end only — connect them to your
+      own backend or email provider.
+    </div> -->
+
+    <div class="foot-bottom">
+      <span>© 2026 Learn PHP. All rights reserved.</span>
+      <span data-donation="compact"></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---- mobile menu ---- */
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('mobileMenu');
+  if (burger && menu) {
+    burger.addEventListener('click', function () {
+      var open = menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.textContent = open ? '✕' : '☰';
+    });
+    menu.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        menu.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        burger.textContent = '☰';
+      }
+    });
+  }
+
+  /* ---- pricing toggle ---- */
+  var bm = document.getElementById('btnMonthly');
+  var by = document.getElementById('btnYearly');
+  function setPeriod(period) {
+    var isYearly = period === 'yearly';
+    if (bm) bm.classList.toggle('active', !isYearly);
+    if (by) by.classList.toggle('active', isYearly);
+    var nodes = document.querySelectorAll('[data-monthly]');
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      el.textContent = isYearly ? el.getAttribute('data-yearly') : el.getAttribute('data-monthly');
+    }
+    // keep the matrix price row in sync
+    var mx = document.querySelectorAll('.mx-price [data-monthly]');
+    for (var j = 0; j < mx.length; j++) {
+      mx[j].textContent = isYearly ? mx[j].getAttribute('data-yearly') : mx[j].getAttribute('data-monthly');
+    }
+  }
+  if (bm) bm.addEventListener('click', function () { setPeriod('monthly'); });
+  if (by) by.addEventListener('click', function () { setPeriod('yearly'); });
+
+  /* ---- newsletter (front-end only) ---- */
+  var form = document.getElementById('nlForm');
+  var email = document.getElementById('nlEmail');
+  var ok = document.getElementById('nlOk');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = (email.value || '').trim();
+      var valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+      if (!valid) {
+        email.style.borderColor = '#E06C6C';
+        email.focus();
+        return;
+      }
+      email.style.borderColor = '';
+      if (ok) ok.classList.add('show');
+      if (window.LP && LP.track) LP.track('newsletter_submit', { source: 'homepage' });
+      form.reset();
+    });
+  }
+
+
+  /* ---- curriculum search + level filter ---- */
+  (function () {
+    var groups = document.querySelectorAll('.cl-group');
+    var rows = document.querySelectorAll('.cl-row');
+    var input = document.getElementById('clSearch');
+    var clear = document.getElementById('clClear');
+    var countEl = document.getElementById('clCount');
+    var emptyEl = document.getElementById('clEmpty');
+    var chips = document.querySelectorAll('.cl-chip');
+    var expand = document.getElementById('clExpand');
+    var collapse = document.getElementById('clCollapse');
+    if (!rows.length) return;
+
+    var filter = 'all';
+
+    function apply() {
+      var q = (input && input.value || '').trim().toLowerCase();
+      var shown = 0;
+
+      for (var i = 0; i < rows.length; i++) {
+        var row = rows[i];
+        var lv = row.getAttribute('data-lv');
+        var isPro = row.getAttribute('data-pro') === '1';
+        var hay = row.getAttribute('data-search') || '';
+
+        var okFilter = filter === 'all'
+          || (filter === 'free' && !isPro)
+          || (filter === 'pro' && isPro)
+          || filter === lv;
+        var okSearch = !q || hay.indexOf(q) !== -1;
+
+        if (okFilter && okSearch) {
+          row.hidden = false;
+          shown++;
+        } else {
+          row.hidden = true;
+        }
+      }
+
+      for (var g = 0; g < groups.length; g++) {
+        var visible = groups[g].querySelectorAll('.cl-row:not([hidden])').length;
+        groups[g].hidden = visible === 0;
+        if (visible > 0 && (q || filter !== 'all')) {
+          groups[g].open = true;
+        }
+      }
+
+      if (countEl) {
+        countEl.textContent = shown + (shown === 1 ? ' lesson' : ' lessons');
+      }
+      if (emptyEl) emptyEl.hidden = shown !== 0;
+      if (clear) clear.hidden = !q;
+    }
+
+    if (input) {
+      input.addEventListener('input', apply);
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { input.value = ''; apply(); }
+      });
+    }
+    if (clear) {
+      clear.addEventListener('click', function () {
+        input.value = ''; input.focus(); apply();
+      });
+    }
+    for (var c = 0; c < chips.length; c++) {
+      chips[c].addEventListener('click', function () {
+        for (var k = 0; k < chips.length; k++) chips[k].classList.remove('active');
+        this.classList.add('active');
+        filter = this.getAttribute('data-filter');
+        apply();
+      });
+    }
+    if (expand) expand.addEventListener('click', function () {
+      for (var g = 0; g < groups.length; g++) if (!groups[g].hidden) groups[g].open = true;
+    });
+    if (collapse) collapse.addEventListener('click', function () {
+      for (var g = 0; g < groups.length; g++) groups[g].open = false;
+    });
+
+    apply();
+  })();
+
+  /* ---- reveal on scroll (additive: content is visible without JS) ---- */
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    for (var j = 0; j < items.length; j++) io.observe(items[j]);
+  } else {
+    for (var k = 0; k < items.length; k++) items[k].classList.add('in');
+  }
+})();
+</script>
+<script src="assets/app.js"></script>
+<script src="assets/donation-config.js"></script>
+<script src="assets/donation.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# robots.txt — Learn PHP
+# NOTE: crawlers only honour robots.txt at the DOMAIN ROOT
+# (https://yourdomain.com/robots.txt). If this site is served from a
+# subdirectory, copy this file to the domain root and keep the Sitemap
+# line pointing at the absolute sitemap URL below.
+
+User-agent: *
+Allow: /
+
+# Retired / non-content pages — also marked noindex in their own <head>.
+# They stay reachable so old bookmarks do not 404, but they are not content.
+Disallow: /checkout.html
+Disallow: /dashboard.html
+Disallow: /signup.html
+Disallow: /certificate.html
+Disallow: /tools/
+
+# Nothing here needs crawling by these.
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+Sitemap: https://static.teamily.ai/sites/3b1261c2-d849-4ad1-8822-626109251b81/webpages/learn-php_v8/sitemap.xml
